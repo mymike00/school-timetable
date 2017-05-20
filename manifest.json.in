@@ -1,0 +1,15 @@
+{
+    "name": "school.mymike",
+    "description": "Semplice app per organizzare le materie scolastiche nella settimana",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Orario Scolastico",
+    "hooks": {
+        "School": {
+            "apparmor": "School/School.apparmor",
+            "desktop": "School/School.desktop"
+        }
+    },
+    "version": "0.2",
+    "maintainer": "Mike <miguel2000@livecom.it>",
+    "framework": "ubuntu-sdk-15.04"
+}

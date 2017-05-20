@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-20 21:35+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/mike/Documenti/PC/App/School/School/about.qml:7
+msgid "About"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/about.qml:15
+msgid "Back"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/about.qml:68
+msgid "Versione "
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/about.qml:99
+msgid "Rilasciata sotto i termini della licenza GNU GPL v3"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/about.qml:111
+msgid "Codice sorgente non disponibile in rete"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:9
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:123
+msgid "Orario Scolastico"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:20
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:146
+msgid "Close"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:24
+msgid "Accept"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:39
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:156
+msgid "Lun"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:39
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:156
+msgid "Mar"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:39
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:156
+msgid "Mer"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:39
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:156
+msgid "Gio"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:39
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:156
+msgid "Ven"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:39
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:156
+msgid "Sab"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:39
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:156
+msgid "Dom"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:154
+msgid ""
+"Non si va a Scuola\n"
+"Sei in Vacanza"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:173
+msgid "Materie"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:200
+msgid "Insert a subject"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:132
+msgid "Info"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:137
+msgid "Edit"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1078
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1088
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1098
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1108
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1118
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1128
+msgid "Libri: "
+msgstr ""

@@ -1,18 +1,16 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
-import Ubuntu.Components.Popups 1.3
 import U1db 1.0 as U1db
 
 Page {
     header: PageHeader {
         id: pageHeader
-        title: i18n.tr("Orario Scolastico")
+        title: i18n.tr("Edit TimeTable")
         StyleHints {
             //foregroundColor: UbuntuColors.coolGrey
             backgroundColor:  "transparent"
             dividerColor: "transparent"
         }
-        //backgroundColor: UbuntuColors.porcelain
         trailingActionBar.actions: [
             Action {
                 iconName: "close"
@@ -23,7 +21,7 @@ Page {
                 iconName: "ok"
                 text: i18n.tr("Accept")
                 onTriggered: {
-                    accept(lunediOra1.text,lunediOra2.text,lunediOra3.text,lunediOra4.text,lunediOra5.text,lunediOra6.text,martediOra1.text,martediOra2.text,martediOra3.text,martediOra4.text,martediOra5.text,martediOra6.text)
+                    accept(lunediOra1.text,lunediOra2.text,lunediOra3.text,lunediOra4.text,lunediOra5.text,lunediOra6.text,martediOra1.text,martediOra2.text,martediOra3.text,martediOra4.text,martediOra5.text,martediOra6.text,mercolediOra1.text,mercolediOra2.text,mercolediOra3.text,mercolediOra4.text,mercolediOra5.text,mercolediOra6.text,giovediOra1.text,giovediOra2.text,giovediOra3.text,giovediOra4.text,giovediOra5.text,giovediOra6.text,venerdiOra1.text,venerdiOra2.text,venerdiOra3.text,venerdiOra4.text,venerdiOra5.text,venerdiOra6.text,sabatoOra1.text,sabatoOra2.text,sabatoOra3.text,sabatoOra4.text)
                     pageStack.pop()
                 }
             }
@@ -36,7 +34,7 @@ Page {
                 right: parent.right
                 bottom: parent.bottom
             }
-            model :[i18n.tr("Lun"),i18n.tr("Mar"),i18n.tr("Mer"),i18n.tr("Gio"),i18n.tr("Ven"),i18n.tr("Sab"),i18n.tr("Dom")]
+            model :[i18n.tr("Mon"),i18n.tr("Tue"),i18n.tr("Wed"),i18n.tr("Thu"),i18n.tr("Fri"),i18n.tr("Sat"),i18n.tr("Sun")]
         }
     }
     /*Component.onCompleted: {
@@ -137,21 +135,28 @@ Page {
 
             //Domenica
             Column {
-                height:holiday.height+name.height
-                y:(pageStack.height-holiday.height-name.height-pageHeader.height)/2
+                height:holiday.height+name.height+name2.height
+                y:(pageStack.height-this.height-pageHeader.height-units.gu(5))/2
                 anchors.horizontalCenter: parent.horizontalCenter
+                visible: header_sections_edit.selectedIndex === 6
+                spacing: units.gu(2)
                 Image {
                     id: holiday
-                    visible: header_sections_edit.selectedIndex === 6
                     source: "Party-Poppers.png"
                     anchors.horizontalCenter: parent.horizontalCenter
                     height: units.gu(25)
                     width: height
                 }
-                Label {
+                Text {
                     id: name
-                    visible: header_sections_edit.selectedIndex === 6
-                    text: i18n.tr("Non si va a Scuola\nSei in Vacanza")
+                    text: i18n.tr("You don't go to School")
+                    font.pointSize: units.gu(2.5)
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    horizontalAlignment: Text.AlignHCenter
+                }
+                Text {
+                    id: name2
+                    text: i18n.tr("You're on Holiday")
                     font.pointSize: units.gu(2.5)
                     anchors.horizontalCenter: parent.horizontalCenter
                     horizontalAlignment: Text.AlignHCenter
@@ -170,9 +175,9 @@ Page {
                 ListItem {
                     visible:  header_sections_edit.selectedIndex !== 6
                     ListItemLayout {
-                        title.text: i18n.tr("Materie")
+                        title.text: i18n.tr("Subjects")
                         title.font.weight: Font.DemiBold
-                        Icon {
+                        /*Icon {
                             name: "bookmark"
                             color: UbuntuColors.blue
                             height: units.gu(3)
@@ -183,7 +188,7 @@ Page {
                             color: UbuntuColors.blue
                             height: units.gu(3)
                             width: height
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
@@ -411,6 +416,7 @@ Page {
                         //title.text: i18n.tr(materieMar[5])
                         TextField  {
                             id: martediOra6
+                            placeholderText: lunediOra1.placeholderText
                             text: i18n.tr(matMartedi.contents.sestaOra)
                         }
 
@@ -439,7 +445,8 @@ Page {
                         //title.text: i18n.tr(materieMer[0])
                         TextField  {
                             id: mercolediOra1
-                            text: i18n.tr(matMercoledi.contents.primaoraOra)
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matMercoledi.contents.ora1)
                         }
 
                         /*CheckBox {
@@ -462,9 +469,14 @@ Page {
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 2
                     ListItemLayout {
-                        title.text: i18n.tr(materieMer[1])
+                        //title.text: i18n.tr(materieMer[1])
+                        TextField  {
+                            id: mercolediOra2
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matMercoledi.contents.ora2)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: mer2_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (mer2_1.checked == true) nLibriMer += 1
@@ -477,16 +489,21 @@ Page {
                                 if (mer2_2.checked == true) nQuaderniMer += 1
                                 else if (mer2_2.checked == false) nQuaderniMer -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 2
                     ListItemLayout {
-                        title.text: i18n.tr(materieMer[2])
+                        //title.text: i18n.tr(materieMer[2])
+                        TextField  {
+                            id: mercolediOra3
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matMercoledi.contents.ora3)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: mer3_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (mer3_1.checked == true) nLibriMer += 1
@@ -499,16 +516,21 @@ Page {
                                 if (mer3_2.checked == true) nQuaderniMer += 1
                                 else if (mer3_2.checked == false) nQuaderniMer -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 2
                     ListItemLayout {
-                        title.text: i18n.tr(materieMer[3])
+                        //title.text: i18n.tr(materieMer[3])
+                        TextField  {
+                            id: mercolediOra4
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matMercoledi.contents.ora4)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: mer4_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (mer4_1.checked == true) nLibriMer += 1
@@ -521,16 +543,21 @@ Page {
                                 if (mer4_2.checked == true) nQuaderniMer += 1
                                 else if (mer4_2.checked == false) nQuaderniMer -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 2
                     ListItemLayout {
-                        title.text: i18n.tr(materieMer[4])
+                        //title.text: i18n.tr(materieMer[4])
+                        TextField  {
+                            id: mercolediOra5
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matMercoledi.contents.ora5)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: mer5_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (mer5_1.checked == true) nLibriMer += 1
@@ -543,16 +570,21 @@ Page {
                                 if (mer5_2.checked == true) nQuaderniMer += 1
                                 else if (mer5_2.checked == false) nQuaderniMer -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 2
                     ListItemLayout {
-                        title.text: i18n.tr(materieMer[5])
+                        //title.text: i18n.tr(materieMer[5])
+                        TextField  {
+                            id: mercolediOra6
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matMercoledi.contents.ora6)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: mer6_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (mer6_1.checked == true) nLibriMer += 1
@@ -565,7 +597,7 @@ Page {
                                 if (mer6_2.checked == true) nQuaderniMer += 1
                                 else if (mer6_2.checked == false) nQuaderniMer -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
@@ -574,9 +606,13 @@ Page {
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 3
                     ListItemLayout {
-                        title.text: i18n.tr(materieGio[0])
-
-                        CheckBox {
+                        //title.text: i18n.tr(matGiovedi.contents.ora1)
+                        TextField {
+                            id: giovediOra1
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matGiovedi.contents.ora1)
+                        }
+                        /*CheckBox {
                             id: gio1_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (gio1_1.checked == true) nLibriGio += 1
@@ -589,16 +625,21 @@ Page {
                                 if (gio1_2.checked == true) nQuaderniGio += 1
                                 else if (gio1_2.checked == false) nQuaderniGio -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 3
                     ListItemLayout {
-                        title.text: i18n.tr(materieGio[1])
+                        //title.text: i18n.tr(materieGio[1])
+                        TextField {
+                            id: giovediOra2
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matGiovedi.contents.ora2)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: gio2_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (gio2_1.checked == true) nLibriGio += 1
@@ -611,16 +652,21 @@ Page {
                                 if (gio2_2.checked == true) nQuaderniGio += 1
                                 else if (gio2_2.checked == false) nQuaderniGio -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 3
                     ListItemLayout {
-                        title.text: i18n.tr(materieGio[2])
+                        //title.text: i18n.tr(materieGio[2])
+                        TextField {
+                            id: giovediOra3
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matGiovedi.contents.ora3)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: gio3_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (gio3_1.checked == true) nLibriGio += 1
@@ -633,16 +679,21 @@ Page {
                                 if (gio3_2.checked == true) nQuaderniGio += 1
                                 else if (gio3_2.checked == false) nQuaderniGio -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 3
                     ListItemLayout {
-                        title.text: i18n.tr(materieGio[3])
+                        //title.text: i18n.tr(materieGio[3])
+                        TextField {
+                            id: giovediOra4
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matGiovedi.contents.ora4)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: gio4_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (gio4_1.checked == true) nLibriGio += 1
@@ -655,7 +706,33 @@ Page {
                                 if (gio4_2.checked == true) nQuaderniGio += 1
                                 else if (gio4_2.checked == false) nQuaderniGio -= 1
                             }
+                        }*/
+                    }
+                    onClicked: {}
+                }
+                ListItem {
+                    visible: header_sections_edit.selectedIndex === 3
+                    ListItemLayout {
+                        //title.text: i18n.tr(materieGio[3])
+                        TextField {
+                            id: giovediOra5
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matGiovedi.contents.ora5)
                         }
+
+                    }
+                    onClicked: {}
+                }
+                ListItem {
+                    visible: header_sections_edit.selectedIndex === 3
+                    ListItemLayout {
+                        //title.text: i18n.tr(materieGio[3])
+                        TextField {
+                            id: giovediOra6
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matGiovedi.contents.ora6)
+                        }
+
                     }
                     onClicked: {}
                 }
@@ -664,9 +741,14 @@ Page {
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 4
                     ListItemLayout {
-                        title.text: i18n.tr(materieVen[0])
+                        //title.text: i18n.tr(materieVen[0])
+                        TextField {
+                            id: venerdiOra1
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matVenerdi.contents.ora1)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: ven1_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (ven1_1.checked == true) nLibriVen += 1
@@ -679,16 +761,21 @@ Page {
                                 if (ven1_2.checked == true) nQuaderniVen += 1
                                 else if (ven1_2.checked == false) nQuaderniVen -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 4
                     ListItemLayout {
-                        title.text: i18n.tr(materieVen[1])
+                        //title.text: i18n.tr(materieVen[1])
+                        TextField {
+                            id: venerdiOra2
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matVenerdi.contents.ora2)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: ven2_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (ven2_1.checked == true) nLibriVen += 1
@@ -701,16 +788,21 @@ Page {
                                 if (ven2_2.checked == true) nQuaderniVen += 1
                                 else if (ven2_2.checked == false) nQuaderniVen -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 4
                     ListItemLayout {
-                        title.text: i18n.tr(materieVen[2])
+                        //title.text: i18n.tr(materieVen[2])
+                        TextField {
+                            id: venerdiOra3
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matVenerdi.contents.ora3)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: ven3_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (ven3_1.checked == true) nLibriVen += 1
@@ -723,16 +815,21 @@ Page {
                                 if (ven3_2.checked == true) nQuaderniVen += 1
                                 else if (ven3_2.checked == false) nQuaderniVen -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 4
                     ListItemLayout {
-                        title.text: i18n.tr(materieVen[3])
+                        //title.text: i18n.tr(materieVen[3])
+                        TextField {
+                            id: venerdiOra4
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matVenerdi.contents.ora4)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: ven4_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (ven4_1.checked == true) nLibriVen += 1
@@ -745,38 +842,48 @@ Page {
                                 if (ven4_2.checked == true) nQuaderniVen += 1
                                 else if (ven4_2.checked == false) nQuaderniVen -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 4
                     ListItemLayout {
-                        title.text: i18n.tr(materieVen[4])
+                        //title.text: i18n.tr(materieVen[4])
+                        TextField {
+                            id: venerdiOra5
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matVenerdi.contents.ora5)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: ven5_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (ven5_1.checked == true) nLibriVen += 1
                                 else if (ven5_1.checked == false) nLibriVen -= 1
                             }
                         }
-                        CheckBox {
+                        /*CheckBox {
                             id: ven5_2; width:units.gu(3); height:width;
                             onClicked: {
                                 if (ven5_2.checked == true) nQuaderniVen += 1
                                 else if (ven5_2.checked == false) nQuaderniVen -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 4
                     ListItemLayout {
-                        title.text: i18n.tr(materieVen[5])
+                        //title.text: i18n.tr(materieVen[5])
+                        TextField {
+                            id: venerdiOra6
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matVenerdi.contents.ora6)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: ven6_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (ven6_1.checked == true) nLibriVen += 1
@@ -789,7 +896,7 @@ Page {
                                 if (ven6_2.checked == true) nQuaderniVen += 1
                                 else if (ven6_2.checked == false) nQuaderniVen -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
@@ -798,9 +905,14 @@ Page {
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 5
                     ListItemLayout {
-                        title.text: i18n.tr(materieSab[0])
+                        //title.text: i18n.tr(materieSab[0])
+                        TextField {
+                            id: sabatoOra1
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matSabato.contents.ora1)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: sab1_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (sab1_1.checked == true) nLibriSab += 1
@@ -813,16 +925,21 @@ Page {
                                 if (sab1_2.checked == true) nQuaderniSab += 1
                                 else if (sab1_2.checked == false) nQuaderniSab -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 5
                     ListItemLayout {
-                        title.text: i18n.tr(materieSab[1])
+                        //title.text: i18n.tr(materieSab[1])
+                        TextField {
+                            id: sabatoOra2
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matSabato.contents.ora2)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: sab2_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (sab2_1.checked == true) nLibriSab += 1
@@ -835,16 +952,21 @@ Page {
                                 if (sab2_2.checked == true) nQuaderniSab += 1
                                 else if (sab2_2.checked == false) nQuaderniSab -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 5
                     ListItemLayout {
-                        title.text: i18n.tr(materieSab[2])
+                        //title.text: i18n.tr(materieSab[2])
+                        TextField {
+                            id: sabatoOra3
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matSabato.contents.ora3)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: sab3_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (sab3_1.checked == true) nLibriSab += 1
@@ -857,16 +979,21 @@ Page {
                                 if (sab3_2.checked == true) nQuaderniSab += 1
                                 else if (sab3_2.checked == false) nQuaderniSab -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }
                 ListItem {
                     visible: header_sections_edit.selectedIndex === 5
                     ListItemLayout {
-                        title.text: i18n.tr(materieSab[3])
+                        //title.text: i18n.tr(materieSab[3])
+                        TextField {
+                            id: sabatoOra4
+                            placeholderText: lunediOra1.placeholderText
+                            text: i18n.tr(matSabato.contents.ora4)
+                        }
 
-                        CheckBox {
+                        /*CheckBox {
                             id: sab4_1; width:units.gu(3); height:width;
                             onClicked: {
                                 if (sab4_1.checked == true) nLibriSab += 1
@@ -879,7 +1006,7 @@ Page {
                                 if (sab4_2.checked == true) nQuaderniSab += 1
                                 else if (sab4_2.checked == false) nQuaderniSab -= 1
                             }
-                        }
+                        }*/
                     }
                     onClicked: {}
                 }

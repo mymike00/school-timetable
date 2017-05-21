@@ -47,7 +47,7 @@ MainView {
     property int min: date.getMinutes()
 
     //property var materieLun: [["Diritto"],["Matematica"],["Matematica"],["Informatica"],["Storia"],["Italiano"]]
-    property var materieMar: [["Telecomunicazioni"],["Sistemi & Reti"],["Compl. Mate"],["Informatica"],["Sistemi & Reti"],["😇"]]
+    //property var materieMar: [["Telecomunicazioni"],["Sistemi & Reti"],["Compl. Mate"],["Informatica"],["Sistemi & Reti"],["😇"]]
     property var materieMer: [["Sistemi & Reti"],["Sistemi & Reti"],["Inglese"],["Matematica"],["Italiano"],["😇"]]
     property var materieGio: [["Telecomunicazioni"],["TPS"],["Telecomunicazioni"],["Telecomunicazioni"]]
     property var materieVen: [["Matematica"],["TPS"],["TPS"],["Religione"],["Italiano"],["😇"]]
@@ -86,8 +86,36 @@ MainView {
             sestaOra: "😇"
         }
     }
+    U1db.Document {
+        id: matMercoledi
+        database: db
+        docId: "matMercoledi"
+        create: true
+        defaults: {ora1:"";ora2:"";ora3:"";ora4:"";ora5:"";ora6:""}
+    }
+    U1db.Document {
+        id: matGiovedi
+        database: db
+        docId: "matGiovedi"
+        create: true
+        defaults: {ora1:"";ora2:"";ora3:"";ora4:"";ora5:"";ora6:"";}
+    }
+    U1db.Document {
+        id: matVenerdi
+        database: db
+        docId: "matVenerdi"
+        create: true
+        defaults: {ora1:"";ora2:"";ora3:"";ora4:"";ora5:"";ora6:""}
+    }
+    U1db.Document {
+        id: matSabato
+        database: db
+        docId: "matSabato"
+        create: true
+        defaults: {ora1:"";ora2:"";ora3:"";ora4:"";ora5:"";ora6:""}
+    }
 
-    function accept(lunediOra1,lunediOra2,lunediOra3,lunediOra4,lunediOra5,lunediOra6,martediOra1,martediOra2,martediOra3,martediOra4,martediOra5,martediOra6) {
+    function accept(lunediOra1,lunediOra2,lunediOra3,lunediOra4,lunediOra5,lunediOra6,martediOra1,martediOra2,martediOra3,martediOra4,martediOra5,martediOra6,mercolediOra1,mercolediOra2,mercolediOra3,mercolediOra4,mercolediOra5,mercolediOra6,giovediOra1,giovediOra2,giovediOra3,giovediOra4,giovediOra5,giovediOra6,venerdiOra1,venerdiOra2,venerdiOra3,venerdiOra4,venerdiOra5,venerdiOra6,sabatoOra1,sabatoOra2,sabatoOra3,sabatoOra4) {
         //SALVA TUTTO NEL DB - save all in the db
         /*var c = matLunedi.contents
         c["primaOra"] = lunediOra1
@@ -97,22 +125,12 @@ MainView {
         c["quintaOra"] = lunediOra5
         c["sestaOra"] = lunediOra6
         matLunedi.contents = c*/
-        matMartedi.contents = {
-            primaOra: martediOra1,
-            secondaOra: martediOra2,
-            terzaOra: martediOra3,
-            quartaOra: martediOra4,
-            quintaOra: martediOra5,
-            sestaOra: martediOra6
-        }
-        matLunedi.contents = {
-            primaOra: lunediOra1,
-            secondaOra: lunediOra2,
-            terzaOra: lunediOra3,
-            quartaOra: lunediOra4,
-            quintaOra: lunediOra5,
-            sestaOra: lunediOra6
-        }
+        matLunedi.contents = {primaOra: lunediOra1,secondaOra: lunediOra2,terzaOra: lunediOra3,quartaOra: lunediOra4,quintaOra: lunediOra5,sestaOra: lunediOra6}
+        matMartedi.contents = {primaOra: martediOra1,secondaOra: martediOra2,terzaOra: martediOra3,quartaOra: martediOra4,quintaOra: martediOra5,sestaOra: martediOra6}
+        matMercoledi.contents = {ora1: mercolediOra1,ora2: mercolediOra2,ora3: mercolediOra3,ora4: mercolediOra4,ora5: mercolediOra5,ora6: mercolediOra6}
+        matGiovedi.contents = {ora1: giovediOra1,ora2: giovediOra2,ora3: giovediOra3,ora4: giovediOra4,ora5: giovediOra5,ora6: giovediOra6}
+        matVenerdi.contents = {ora1: venerdiOra1, ora2: venerdiOra2, ora3: venerdiOra3, ora4: venerdiOra4, ora5: venerdiOra5, ora6: venerdiOra6}
+        matSabato.contents = {ora1: sabatoOra1, ora2: sabatoOra2, ora3: sabatoOra3, ora4: sabatoOra4}
     }
 
     PageStack {
@@ -120,7 +138,7 @@ MainView {
         Page {
             header: PageHeader {
                 id: pageHeader
-                title: i18n.tr("Orario Scolastico")
+                title: i18n.tr("School TimeTable")
                 StyleHints {
                     //foregroundColor: UbuntuColors.coolGrey
                     backgroundColor:  "transparent"
@@ -128,22 +146,22 @@ MainView {
                 }
                 trailingActionBar.actions: [
                     Action {
-                        iconName: "info"
-                        text: i18n.tr("Info")
-                        onTriggered: pageStack.push(Qt.resolvedUrl("about.qml"))
+                        iconName: "close"
+                        onTriggered: Qt.quit()
+                        text: i18n.tr("Close")
                     },
                     Action {
                         iconName: "edit"
                         text: i18n.tr("Edit")
                         onTriggered: {
                             pageStack.push(Qt.resolvedUrl("Edit.qml"))
-                            //header_sections_edit.selectedIndex = header_sections.selectedIndex // - da corregere
+                            //header_sections_edit.selectedIndex = header_sections.selectedIndex // - da corregere. db?
                         }
                     },
                     Action {
-                        iconName: "close"
-                        onTriggered: Qt.quit()
-                        text: i18n.tr("Close")
+                        iconName: "info"
+                        text: i18n.tr("Info")
+                        onTriggered: pageStack.push(Qt.resolvedUrl("About.qml"))
                     }
                 ]
                 extension: Sections {
@@ -153,10 +171,14 @@ MainView {
                         right: parent.right
                         bottom: parent.bottom
                     }
-                    model :[i18n.tr("Lun"),i18n.tr("Mar"),i18n.tr("Mer"),i18n.tr("Gio"),i18n.tr("Ven"),i18n.tr("Sab"),i18n.tr("Dom")]
+                    model :[i18n.tr("Mon"),i18n.tr("Tue"),i18n.tr("Wed"),i18n.tr("Thu"),i18n.tr("Fri"),i18n.tr("Sat"),i18n.tr("Sun")]
                 }
             }
             Component.onCompleted: {
+                /*var c = matGiovedi.contents
+                c["ora1"] = "ciao"
+                matGiovedi.contents = c*/
+
                 //matLunedi.contents = {primaOra: "Dirittopippo", secondaOra:"Matematica", terzaOra: "Matematica", quartaOra: "Informatica", quintaOra: "Storia", sestaOra: "Italiano"}
 
                 header_sections.selectedIndex = day
@@ -238,12 +260,12 @@ MainView {
                  id: edit
                  Dialog {
                      id: edit2
-                     title: "Modifica Materia"
+                     title: i18n.tr("Modifica Materia")
                      TextField {
                          id: editField
                      }
                      Button {
-                         text: "Ok"
+                         text: i18n.tr("Ok")
                          color: UbuntuColors.green
                          onClicked: {
                              var c = matLunedi.contents
@@ -254,7 +276,7 @@ MainView {
                          }
                      }
                      Button {
-                         text: "cancel"
+                         text: i18n.tr("cancel")
                          onClicked: PopupUtils.close(edit2)
                      }
                  }
@@ -273,21 +295,28 @@ MainView {
 
                     //Domenica
                     Column {
-                        height:holiday.height+name.height
-                        y:(pageStack.height-holiday.height-name.height-pageHeader.height)/2
+                        height:holiday.height+name.height+name2.height
+                        y:(pageStack.height-this.height-pageHeader.height-units.gu(5))/2
                         anchors.horizontalCenter: parent.horizontalCenter
+                        visible: header_sections.selectedIndex === 6
+                        spacing: units.gu(2)
                         Image {
                             id: holiday
-                            visible: header_sections.selectedIndex === 6
                             source: "Party-Poppers.png"
                             anchors.horizontalCenter: parent.horizontalCenter
                             height: units.gu(25)
                             width: height
                         }
-                        Label {
+                        Text {
                             id: name
-                            visible: header_sections.selectedIndex === 6
-                            text: "Non si va a Scuola\nSei in Vacanza"
+                            text: i18n.tr("You don't go to School")
+                            font.pointSize: units.gu(2.5)
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            horizontalAlignment: Text.AlignHCenter
+                        }
+                        Text {
+                            id: name2
+                            text: i18n.tr("You're on Holiday")
                             font.pointSize: units.gu(2.5)
                             anchors.horizontalCenter: parent.horizontalCenter
                             horizontalAlignment: Text.AlignHCenter
@@ -306,7 +335,7 @@ MainView {
                         ListItem {
                             visible:  header_sections.selectedIndex !== 6
                             ListItemLayout {
-                                title.text: "Materie"
+                                title.text: i18n.tr("Subjects")
                                 title.font.weight: Font.DemiBold
                                 Icon {
                                     name: "bookmark"
@@ -329,7 +358,7 @@ MainView {
                             visible: header_sections.selectedIndex === 0
                             ListItemLayout {
                                 id: lun1
-                                title.text: i18n.tr(matLunedi.contents.primaOra)
+                                title.text: matLunedi.contents.primaOra+"" === "" ? matLunedi.defaults.primaOra : matLunedi.contents.primaOra
 
                                 CheckBox {
                                     id: lun1_1; width:units.gu(3); height:width;
@@ -628,7 +657,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 2
                             ListItemLayout {
-                                title.text: i18n.tr(materieMer[0])
+                                title.text: i18n.tr(matMercoledi.contents.ora1)
 
                                 CheckBox {
                                     id: mer1_1; width:units.gu(3); height:width;
@@ -650,7 +679,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 2
                             ListItemLayout {
-                                title.text: i18n.tr(materieMer[1])
+                                title.text: i18n.tr(matMercoledi.contents.ora2)
 
                                 CheckBox {
                                     id: mer2_1; width:units.gu(3); height:width;
@@ -672,7 +701,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 2
                             ListItemLayout {
-                                title.text: i18n.tr(materieMer[2])
+                                title.text: i18n.tr(matMercoledi.contents.ora3)
 
                                 CheckBox {
                                     id: mer3_1; width:units.gu(3); height:width;
@@ -694,7 +723,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 2
                             ListItemLayout {
-                                title.text: i18n.tr(materieMer[3])
+                                title.text: i18n.tr(matMercoledi.contents.ora4)
 
                                 CheckBox {
                                     id: mer4_1; width:units.gu(3); height:width;
@@ -716,7 +745,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 2
                             ListItemLayout {
-                                title.text: i18n.tr(materieMer[4])
+                                title.text: i18n.tr(matMercoledi.contents.ora5)
 
                                 CheckBox {
                                     id: mer5_1; width:units.gu(3); height:width;
@@ -738,7 +767,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 2
                             ListItemLayout {
-                                title.text: i18n.tr(materieMer[5])
+                                title.text: i18n.tr(matMercoledi.contents.ora6)
 
                                 CheckBox {
                                     id: mer6_1; width:units.gu(3); height:width;
@@ -762,7 +791,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 3
                             ListItemLayout {
-                                title.text: i18n.tr(materieGio[0])
+                                title.text: i18n.tr(matGiovedi.contents.ora1)
 
                                 CheckBox {
                                     id: gio1_1; width:units.gu(3); height:width;
@@ -784,7 +813,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 3
                             ListItemLayout {
-                                title.text: i18n.tr(materieGio[1])
+                                title.text: i18n.tr(matGiovedi.contents.ora2)
 
                                 CheckBox {
                                     id: gio2_1; width:units.gu(3); height:width;
@@ -806,7 +835,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 3
                             ListItemLayout {
-                                title.text: i18n.tr(materieGio[2])
+                                title.text: i18n.tr(matGiovedi.contents.ora3)
 
                                 CheckBox {
                                     id: gio3_1; width:units.gu(3); height:width;
@@ -828,7 +857,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 3
                             ListItemLayout {
-                                title.text: i18n.tr(materieGio[3])
+                                title.text: i18n.tr(matGiovedi.contents.ora4)
 
                                 CheckBox {
                                     id: gio4_1; width:units.gu(3); height:width;
@@ -847,12 +876,56 @@ MainView {
                             }
                             onClicked: {}
                         }
+                        ListItem {
+                            visible: header_sections.selectedIndex === 3
+                            ListItemLayout {
+                                title.text: i18n.tr(matGiovedi.contents.ora5)
+
+                                CheckBox {
+                                    id: gio5_1; width:units.gu(3); height:width;
+                                    onClicked: {
+                                        if (gio5_1.checked == true) nLibriGio += 1
+                                        else if (gio5_1.checked == false) nLibriGio -= 1
+                                    }
+                                }
+                                CheckBox {
+                                    id: gio5_2; width:units.gu(3); height:width;
+                                    onClicked: {
+                                        if (gio5_2.checked == true) nQuaderniGio += 1
+                                        else if (gio5_2.checked == false) nQuaderniGio -= 1
+                                    }
+                                }
+                            }
+                            onClicked: {}
+                        }
+                        ListItem {
+                            visible: header_sections.selectedIndex === 3
+                            ListItemLayout {
+                                title.text: i18n.tr(matGiovedi.contents.ora6)
+
+                                CheckBox {
+                                    id: gio6_1; width:units.gu(3); height:width;
+                                    onClicked: {
+                                        if (gio6_1.checked == true) nLibriGio += 1
+                                        else if (gio6_1.checked == false) nLibriGio -= 1
+                                    }
+                                }
+                                CheckBox {
+                                    id: gio6_2; width:units.gu(3); height:width;
+                                    onClicked: {
+                                        if (gio6_2.checked == true) nQuaderniGio += 1
+                                        else if (gio6_2.checked == false) nQuaderniGio -= 1
+                                    }
+                                }
+                            }
+                            onClicked: {}
+                        }
 
                         //Venerdì
                         ListItem {
                             visible: header_sections.selectedIndex === 4
                             ListItemLayout {
-                                title.text: i18n.tr(materieVen[0])
+                                title.text: i18n.tr(matVenerdi.contents.ora1)
 
                                 CheckBox {
                                     id: ven1_1; width:units.gu(3); height:width;
@@ -874,7 +947,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 4
                             ListItemLayout {
-                                title.text: i18n.tr(materieVen[1])
+                                title.text: i18n.tr(matVenerdi.contents.ora2)
 
                                 CheckBox {
                                     id: ven2_1; width:units.gu(3); height:width;
@@ -896,7 +969,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 4
                             ListItemLayout {
-                                title.text: i18n.tr(materieVen[2])
+                                title.text: i18n.tr(matVenerdi.contents.ora3)
 
                                 CheckBox {
                                     id: ven3_1; width:units.gu(3); height:width;
@@ -918,7 +991,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 4
                             ListItemLayout {
-                                title.text: i18n.tr(materieVen[3])
+                                title.text: i18n.tr(matVenerdi.contents.ora4)
 
                                 CheckBox {
                                     id: ven4_1; width:units.gu(3); height:width;
@@ -940,7 +1013,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 4
                             ListItemLayout {
-                                title.text: i18n.tr(materieVen[4])
+                                title.text: i18n.tr(matVenerdi.contents.ora5)
 
                                 CheckBox {
                                     id: ven5_1; width:units.gu(3); height:width;
@@ -962,7 +1035,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 4
                             ListItemLayout {
-                                title.text: i18n.tr(materieVen[5])
+                                title.text: i18n.tr(matVenerdi.contents.ora6)
 
                                 CheckBox {
                                     id: ven6_1; width:units.gu(3); height:width;
@@ -986,7 +1059,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 5
                             ListItemLayout {
-                                title.text: i18n.tr(materieSab[0])
+                                title.text: i18n.tr(matSabato.contents.ora1)
 
                                 CheckBox {
                                     id: sab1_1; width:units.gu(3); height:width;
@@ -1008,7 +1081,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 5
                             ListItemLayout {
-                                title.text: i18n.tr(materieSab[1])
+                                title.text: i18n.tr(matSabato.contents.ora2)
 
                                 CheckBox {
                                     id: sab2_1; width:units.gu(3); height:width;
@@ -1030,7 +1103,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 5
                             ListItemLayout {
-                                title.text: i18n.tr(materieSab[2])
+                                title.text: i18n.tr(matSabato.contents.ora3)
 
                                 CheckBox {
                                     id: sab3_1; width:units.gu(3); height:width;
@@ -1052,7 +1125,7 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 5
                             ListItemLayout {
-                                title.text: i18n.tr(materieSab[3])
+                                title.text: i18n.tr(matSabato.contents.ora4)
 
                                 CheckBox {
                                     id: sab4_1; width:units.gu(3); height:width;
@@ -1075,9 +1148,9 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 0
                             ListItemLayout {
-                                title.text:i18n.tr("Libri: "+nLibriLun)
+                                title.text:i18n.tr("Books: "+nLibriLun)
                                 title.color: UbuntuColors.orange
-                                Label { text: "Quaderni: "+nQuaderniLun ;color: UbuntuColors.orange}
+                                Label { text: i18n.tr("Exercise books: ")+nQuaderniLun ;color: UbuntuColors.orange}
 
                             }
                             onClicked: {}
@@ -1085,9 +1158,9 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 1
                             ListItemLayout {
-                                title.text:i18n.tr("Libri: "+nLibriMar)
+                                title.text:i18n.tr("Books: "+nLibriMar)
                                 title.color: UbuntuColors.orange
-                                Label { text: "Quaderni: "+nQuaderniMar ;color: UbuntuColors.orange}
+                                Label { text: i18n.tr("Exercise books: ")+nQuaderniMar ;color: UbuntuColors.orange}
 
                             }
                             onClicked: {}
@@ -1095,9 +1168,9 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 2
                             ListItemLayout {
-                                title.text:i18n.tr("Libri: "+nLibriMer)
+                                title.text:i18n.tr("Books: "+nLibriMer)
                                 title.color: UbuntuColors.orange
-                                Label { text: "Quaderni: "+nQuaderniMer ;color: UbuntuColors.orange}
+                                Label { text: i18n.tr("Exercise books: ")+nQuaderniMer ;color: UbuntuColors.orange}
 
                             }
                             onClicked: {}
@@ -1105,9 +1178,9 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 3
                             ListItemLayout {
-                                title.text:i18n.tr("Libri: "+nLibriGio)
+                                title.text:i18n.tr("Books: "+nLibriGio)
                                 title.color: UbuntuColors.orange
-                                Label { text: "Quaderni: "+nQuaderniGio ;color: UbuntuColors.orange}
+                                Label { text: i18n.tr("Exercise books: ")+nQuaderniGio ;color: UbuntuColors.orange}
 
                             }
                             onClicked: {}
@@ -1115,9 +1188,9 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 4
                             ListItemLayout {
-                                title.text:i18n.tr("Libri: "+nLibriVen)
+                                title.text:i18n.tr("Books: "+nLibriVen)
                                 title.color: UbuntuColors.orange
-                                Label { text: "Quaderni: "+nQuaderniVen ;color: UbuntuColors.orange}
+                                Label { text: i18n.tr("Exercise books: ")+nQuaderniVen ;color: UbuntuColors.orange}
 
                             }
                             onClicked: {}
@@ -1125,9 +1198,9 @@ MainView {
                         ListItem {
                             visible: header_sections.selectedIndex === 5
                             ListItemLayout {
-                                title.text:i18n.tr("Libri: "+nLibriSab)
+                                title.text:i18n.tr("Books: "+nLibriSab)
                                 title.color: UbuntuColors.orange
-                                Label { text: "Quaderni: "+nQuaderniSab ;color: UbuntuColors.orange}
+                                Label { text: i18n.tr("Exercise books: ")+nQuaderniSab ;color: UbuntuColors.orange}
 
                             }
                             onClicked: {}

@@ -122,7 +122,24 @@ Page {
     }
 
 
-    Flickable {
+    Timer {
+        id: timerScroll
+        interval: 500; running: false; repeat: false
+        onTriggered: {
+            console.log("timer finito!")
+            page_flickable.flick(0,-1300)
+        }
+    }
+
+    ScrollView {
+        id: page_scrollview
+        anchors {
+            top: pageHeader.bottom
+            left: parent.left
+            right: parent.right
+            bottom: parent.bottom
+        }
+        Flickable {
             id: page_flickable
             anchors {
                 top: pageHeader.bottom
@@ -200,6 +217,9 @@ Page {
                         id: lun1
                         //title.text: i18n.tr(matLunedi.contents.primaOra)
                         TextField  {
+                            focus: true
+                            activeFocusOnTab: true
+                            //InputMethod.extensions: { "enterKeyText": i18n.dtr("address-book-app", "Next") }
                             id: lunediOra1
                             hasClearButton: true
                             placeholderText: i18n.tr("Insert a subject")
@@ -269,6 +289,11 @@ Page {
                             id: lunediOra6
                             placeholderText: lunediOra1.placeholderText
                             text: i18n.tr(matLunedi.contents.sestaOra)
+                            onActiveFocusChanged: {
+                                console.log("Focus attivo!")
+                                page_flickable.flick(0,-500)
+                                timerScroll.start()
+                            }
                         }
                     }
                     onClicked: {}
@@ -1013,4 +1038,5 @@ Page {
             }
         }
     }
+}
 

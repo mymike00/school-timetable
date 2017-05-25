@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-21 15:48+0000\n"
+"POT-Creation-Date: 2017-05-25 12:09+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgid "Back"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/About.qml:61
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:141
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:135
 msgid "School TimeTable"
 msgstr ""
 
@@ -47,7 +47,7 @@ msgid "Edit TimeTable"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:18
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:151
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:145
 msgid "Close"
 msgstr ""
 
@@ -56,93 +56,93 @@ msgid "Accept"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
 msgid "Mon"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
 msgid "Tue"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
 msgid "Wed"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
 msgid "Thu"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
 msgid "Fri"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
 msgid "Sat"
 msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
 msgid "Sun"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Edit.qml:152
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:312
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:313
 msgid "You don't go to School"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Edit.qml:159
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:319
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:176
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:320
 msgid "You're on Holiday"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Edit.qml:178
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:338
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:195
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:339
 msgid "Subjects"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Edit.qml:205
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:225
 msgid "Insert a subject"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:155
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:149
 msgid "Edit"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:163
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:157
 msgid "Info"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:263
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:257
 msgid "Modifica Materia"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:268
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:262
 msgid "Ok"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:279
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:273
 msgid "cancel"
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1151
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1161
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1171
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1181
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1191
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1201
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1152
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1162
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1172
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1182
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1192
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1202
 msgid "Books: "
 msgstr ""
 
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1153
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1163
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1173
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1183
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1193
-#: /home/mike/Documenti/PC/App/School/School/Main.qml:1203
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1154
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1164
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1184
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1194
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1204
 msgid "Exercise books: "
 msgstr ""

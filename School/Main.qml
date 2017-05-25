@@ -20,7 +20,7 @@ MainView {
         screenSaverEnabled: true
     }*/
 
-    property bool isDisplayOn: false
+    //property bool isDisplayOn: false
     property int nLibriLun: 0
     property int nQuaderniLun: 0
 
@@ -45,13 +45,6 @@ MainView {
     property int day: date.getDay()
     property int hour: date.getHours()
     property int min: date.getMinutes()
-
-    //property var materieLun: [["Diritto"],["Matematica"],["Matematica"],["Informatica"],["Storia"],["Italiano"]]
-    //property var materieMar: [["Telecomunicazioni"],["Sistemi & Reti"],["Compl. Mate"],["Informatica"],["Sistemi & Reti"],["😇"]]
-    property var materieMer: [["Sistemi & Reti"],["Sistemi & Reti"],["Inglese"],["Matematica"],["Italiano"],["😇"]]
-    property var materieGio: [["Telecomunicazioni"],["TPS"],["Telecomunicazioni"],["Telecomunicazioni"]]
-    property var materieVen: [["Matematica"],["TPS"],["TPS"],["Religione"],["Italiano"],["😇"]]
-    property var materieSab: [["Informatica"],["Inglese"],["Ed. Fisica"],["Ed. Fisica"]]
 
     //backgroundColor: "#f6d3cd"
     //backgroundColor: "#bf3421"
@@ -133,8 +126,9 @@ MainView {
         matSabato.contents = {ora1: sabatoOra1, ora2: sabatoOra2, ora3: sabatoOra3, ora4: sabatoOra4}
     }
 
+    anchorToKeyboard: true
     PageStack {
-            id: pageStack
+        id: pageStack
         Page {
             header: PageHeader {
                 id: pageHeader
@@ -257,32 +251,39 @@ MainView {
             }
 
             Component {
-                 id: edit
-                 Dialog {
-                     id: edit2
-                     title: i18n.tr("Modifica Materia")
-                     TextField {
-                         id: editField
-                     }
-                     Button {
-                         text: i18n.tr("Ok")
-                         color: UbuntuColors.green
-                         onClicked: {
-                             var c = matLunedi.contents
-                             c['primaOra'] = editField.text
-                             matLunedi.contents = c
-                             lun1.title.text=i18n.tr(matLunedi.contents.primaOra)
-                             PopupUtils.close(edit2)
-                         }
-                     }
-                     Button {
-                         text: i18n.tr("cancel")
-                         onClicked: PopupUtils.close(edit2)
-                     }
-                 }
+                id: edit
+                Dialog {
+                    id: edit2
+                    title: i18n.tr("Modifica Materia")
+                    TextField {
+                        id: editField
+                    }
+                    Button {
+                        text: i18n.tr("Ok")
+                        color: UbuntuColors.green
+                        onClicked: {
+                            var c = matLunedi.contents
+                            c['primaOra'] = editField.text
+                            matLunedi.contents = c
+                            lun1.title.text=i18n.tr(matLunedi.contents.primaOra)
+                            PopupUtils.close(edit2)
+                        }
+                    }
+                    Button {
+                        text: i18n.tr("cancel")
+                        onClicked: PopupUtils.close(edit2)
+                    }
+                }
             }
-
-            Flickable {
+            ScrollView {
+                id: page_scrollview
+                anchors {
+                    top: pageHeader.bottom
+                    left: parent.left
+                    right: parent.right
+                    bottom: parent.bottom
+                }
+                Flickable {
                     id: page_flickable
                     anchors {
                         top: pageHeader.bottom
@@ -299,7 +300,7 @@ MainView {
                         y:(pageStack.height-this.height-pageHeader.height-units.gu(5))/2
                         anchors.horizontalCenter: parent.horizontalCenter
                         visible: header_sections.selectedIndex === 6
-                        spacing: units.gu(2)
+                        spacing: units.gu(0.5)
                         Image {
                             id: holiday
                             source: "Party-Poppers.png"
@@ -1210,4 +1211,5 @@ MainView {
             }
         }
     }
+}
 

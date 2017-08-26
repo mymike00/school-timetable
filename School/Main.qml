@@ -254,7 +254,7 @@ MainView {
                 id: edit
                 Dialog {
                     id: edit2
-                    title: i18n.tr("Modifica Materia")
+                    title: i18n.tr("Edit subject")
                     TextField {
                         id: editField
                     }

@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-05-25 12:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:8
+msgid "About"
+msgstr "À propos"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:16
+msgid "Back"
+msgstr "Retour"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:61
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:135
+msgid "School TimeTable"
+msgstr "Calendrier scolaire"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:67
+msgid "Version "
+msgstr "Version "
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:91
+msgid "Released under the terms of the GNU GPL v3"
+msgstr "Distribué selon les termes de la licence GNU GPL v3"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:102
+msgid "Source code available on "
+msgstr "Code source disponible sous "
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:8
+msgid "Edit TimeTable"
+msgstr "Modifier le calendrier"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:18
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:145
+msgid "Close"
+msgstr "Fermer"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:22
+msgid "Accept"
+msgstr "Accepter"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Mon"
+msgstr "Lun"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Tue"
+msgstr "Mar"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Wed"
+msgstr "Mer"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Thu"
+msgstr "Jeu"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Fri"
+msgstr "Ven"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Sat"
+msgstr "Sam"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:37
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Sun"
+msgstr "Dim"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:313
+msgid "You don't go to School"
+msgstr "Tu ne vas pas à l'école"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:176
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:320
+msgid "You're on Holiday"
+msgstr "Tu es en vacances"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:195
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:339
+msgid "Subjects"
+msgstr "Matières"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:225
+msgid "Insert a subject"
+msgstr "Insérer une matière"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:149
+msgid "Edit"
+msgstr "Modifier"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:157
+msgid "Info"
+msgstr "Informations"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:257
+msgid "Modifica Materia"
+msgstr "Modifier la matière"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:262
+msgid "Ok"
+msgstr "Valider"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:273
+msgid "cancel"
+msgstr "Annuler"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1152
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1162
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1172
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1182
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1192
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1202
+msgid "Books: "
+msgstr "Livres[nbsp]: "
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1154
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1164
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1174
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1184
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1194
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:1204
+msgid "Exercise books: "
+msgstr "Livres d'exercices[nbsp]: "

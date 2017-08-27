@@ -1,6 +1,6 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
-import U1db 1.0 as U1db
+import "script.js" as Js
 
 Page {
     header: PageHeader {
@@ -18,24 +18,7 @@ Page {
             }
         ]
     }
-    Rectangle {
-        color: UbuntuColors.porcelain
-        anchors.fill: parent
-        z: 0
-    }
-    Image {
-        source: "fold3.svg"
-        width: pageStack.width
-        height: width*2
-        y: (pageStack.height-this.width)/2
-        opacity: 0.02
-    }
-    Image {
-        source: "fold2.svg"
-        width: pageStack.width
-        height: pageStack.height
-        opacity: 0.03
-    }
+    BackGround {}
 
     Flickable {
 
@@ -76,6 +59,7 @@ Page {
                     source: "schoolhouse.svg"
                 }
                 anchors.horizontalCenter: parent.horizontalCenter
+                aspect: UbuntuShape.Flat
             }
 
             Column {

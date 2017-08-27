@@ -3,11 +3,12 @@ import Ubuntu.Components 1.3
 import Ubuntu.Components.Popups 1.3
 import U1db 1.0 as U1db
 //import QtSystemInfo 5.0
-//import U1db 1.0 as U1db
+import "script.js" as Js
 
 MainView {
     // objectName for functional testing purposes (autopilot-qt5)
     objectName: "mainView"
+    id: mainView
 
     // Note! applicationName needs to match the "name" field of the click manifest
     applicationName: "school.mymike"
@@ -21,32 +22,18 @@ MainView {
     }*/
 
     //property bool isDisplayOn: false
-    property int nLibriLun: 0
-    property int nQuaderniLun: 0
-
-    property int nLibriMar: 0
-    property int nQuaderniMar: 0
-
-    property int nLibriMer: 0
-    property int nQuaderniMer: 0
-
-    property int nLibriGio: 0
-    property int nQuaderniGio: 0
-
-    property int nLibriVen: 0
-    property int nQuaderniVen: 0
-
-    property int nLibriSab: 0
-    property int nQuaderniSab: 0
-
-    //property int x: 3
+    property var numbers: [[0,0],[0,0],[0,0],[0,0],[0,0],[0,0]]
+    // Book - Exercise > Mon - Tue - ...
+    // [0][0] -> Mon, Book
+    // [4][1] -> Fri, Exercise
 
     property var date: new Date()
     property int day: date.getDay()
     property int hour: date.getHours()
     property int min: date.getMinutes()
 
-    //backgroundColor: "#f6d3cd"
+    property int selIndex: 0
+
     //backgroundColor: "#bf3421"
     backgroundColor: UbuntuColors.porcelain
 
@@ -130,32 +117,33 @@ MainView {
     PageStack {
         id: pageStack
         Page {
+            id: mainPage
             header: PageHeader {
                 id: pageHeader
                 title: i18n.tr("School TimeTable")
                 StyleHints {
                     //foregroundColor: UbuntuColors.coolGrey
-                    backgroundColor:  "transparent"
-                    dividerColor: "transparent"
+                    backgroundColor: "transparent"//"#bf3421"
+                    dividerColor: "transparent"//"#bf3421"
                 }
                 trailingActionBar.actions: [
-                    Action {
+                    /*Action {
                         iconName: "close"
                         onTriggered: Qt.quit()
                         text: i18n.tr("Close")
-                    },
+                        shortcut: "esc"
+                    },*/
                     Action {
                         iconName: "edit"
                         text: i18n.tr("Edit")
-                        onTriggered: {
-                            pageStack.push(Qt.resolvedUrl("Edit.qml"))
-                            //header_sections_edit.selectedIndex = header_sections.selectedIndex // - da corregere. db?
-                        }
+                        onTriggered: pageStack.push(Qt.resolvedUrl("Edit.qml"))
+                        shortcut: "f2"
                     },
                     Action {
                         iconName: "info"
                         text: i18n.tr("Info")
                         onTriggered: pageStack.push(Qt.resolvedUrl("About.qml"))
+                        shortcut: "f1"
                     }
                 ]
                 extension: Sections {
@@ -166,6 +154,7 @@ MainView {
                         bottom: parent.bottom
                     }
                     model :[i18n.tr("Mon"),i18n.tr("Tue"),i18n.tr("Wed"),i18n.tr("Thu"),i18n.tr("Fri"),i18n.tr("Sat"),i18n.tr("Sun")]
+                    onSelectedIndexChanged: selIndex = selectedIndex
                 }
             }
             Component.onCompleted: {
@@ -180,81 +169,15 @@ MainView {
                     if (day==0) header_sections.selectedIndex = 6
                     else header_sections.selectedIndex -= 1
                 }
-
-                /*if (lun1.title.text==="Diritto"||lun1.title.text==="Matematica") {
-                    lun1_2.checked=true
-                    nQuaderniLun +=1
-                }
-                if (lun1.title.text==="Storia"||lun1.title.text==="Matematica") {
-                    lun1_1.checked=true
-                    nLibriLun +=1
-                }
-
-                if (lun2.title.text==="Diritto"||lun2.title.text==="Matematica") {
-                    lun2_2.checked=true
-                    nQuaderniLun +=1
-                }
-                if (lun2.title.text==="Storia"||lun2.title.text==="Matematica") {
-                    lun2_1.checked=true
-                    nLibriLun +=1
-                }
-
-                if (lun3.title.text==="Diritto"||lun3.title.text==="Matematica") {
-                    lun3_2.checked=true
-                    nQuaderniLun +=1
-                }
-                if (lun3.title.text==="Storia"||lun3.title.text==="Matematica") {
-                    lun3_1.checked=true
-                    nLibriLun +=1
-                }
-
-                if (lun4.title.text==="Diritto"||lun4.title.text==="Matematica") {
-                    lun4_2.checked=true
-                    nQuaderniLun +=1
-                }
-                if (lun4.title.text==="Storia"||lun4.title.text==="Matematica") {
-                    lun4_1.checked=true
-                    nLibriLun +=1
-                }
-
-                if (lun5.title.text==="Diritto"||lun5.title.text==="Matematica") {
-                    lun5_2.checked=true
-                    nQuaderniLun +=1
-                }
-                if (lun5.title.text==="Storia"||lun5.title.text==="Matematica") {
-                    lun5_1.checked=true
-                    nLibriLun +=1
-                }
-
-                if (lun6.title.text==="Diritto"||lun6.title.text==="Matematica") {
-                    lun6_2.checked=true
-                    nQuaderniLun +=1
-                }
-                if (lun6.title.text==="Storia"||lun6.title.text==="Matematica") {
-                    lun6_1.checked=true
-                    nLibriLun +=1
-                }*/
+                selIndex = header_sections.selectedIndex
             }
-
-            Image {
-                source: "fold3.svg"
-                width: pageStack.width
-                height: width*2
-                y: (pageStack.height-this.width)/2
-                opacity: 0.02
-            }
-            Image {
-                source: "fold2.svg"
-                width: pageStack.width
-                height: pageStack.height
-                opacity: 0.03
-            }
+            BackGround {}
 
             Component {
                 id: edit
                 Dialog {
                     id: edit2
-                    title: i18n.tr("Edit subject")
+                    title: i18n.tr("Modifica Materia")
                     TextField {
                         id: editField
                     }
@@ -275,6 +198,7 @@ MainView {
                     }
                 }
             }
+
             ScrollView {
                 id: page_scrollview
                 anchors {
@@ -285,931 +209,216 @@ MainView {
                 }
                 Flickable {
                     id: page_flickable
-                    anchors {
-                        top: pageHeader.bottom
-                        left: parent.left
-                        right: parent.right
-                        bottom: parent.bottom
-                    }
+                    anchors.fill: parent
                     contentHeight:  main_column.height + units.gu(2)
                     clip: true
 
-                    //Domenica
-                    Column {
-                        height:holiday.height+name.height+name2.height
-                        y:(pageStack.height-this.height-pageHeader.height-units.gu(5))/2
-                        anchors.horizontalCenter: parent.horizontalCenter
-                        visible: header_sections.selectedIndex === 6
-                        spacing: units.gu(0.5)
-                        Image {
-                            id: holiday
-                            source: "Party-Poppers.png"
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            height: units.gu(25)
-                            width: height
-                        }
-                        Text {
-                            id: name
-                            text: i18n.tr("You don't go to School")
-                            font.pointSize: units.gu(2.5)
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            horizontalAlignment: Text.AlignHCenter
-                        }
-                        Text {
-                            id: name2
-                            text: i18n.tr("You're on Holiday")
-                            font.pointSize: units.gu(2.5)
-                            anchors.horizontalCenter: parent.horizontalCenter
-                            horizontalAlignment: Text.AlignHCenter
-                        }
-                    }
 
                     Column {
                         id: main_column
-
                         anchors {
                             left: parent.left
                             right: parent.right
                             top: parent.top
                         }
 
-                        ListItem {
+                        SubjectHeader {
                             visible:  header_sections.selectedIndex !== 6
-                            ListItemLayout {
-                                title.text: i18n.tr("Subjects")
-                                title.font.weight: Font.DemiBold
-                                Icon {
-                                    name: "bookmark"
-                                    color: UbuntuColors.blue
-                                    height: units.gu(3)
-                                    width: height
-                                }
-                                Icon {
-                                    name: "edit-copy"
-                                    color: UbuntuColors.blue
-                                    height: units.gu(3)
-                                    width: height
-                                }
-                            }
-                            onClicked: {}
                         }
 
-                        //Lunedì
-                        ListItem {
-                            visible: header_sections.selectedIndex === 0
-                            ListItemLayout {
-                                id: lun1
-                                title.text: matLunedi.contents.primaOra+"" === "" ? matLunedi.defaults.primaOra : matLunedi.contents.primaOra
-
-                                CheckBox {
-                                    id: lun1_1; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun1_1.checked == true) nLibriLun += 1
-                                        else if (lun1_1.checked == false) nLibriLun -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: lun1_2; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun1_2.checked == true) nQuaderniLun += 1
-                                        else if (lun1_2.checked == false) nQuaderniLun -= 1
-                                    }
-                                }
-                            }
-                            /*trailingActions: ListItemActions {
-                                actions: [
-                                    Action {
-                                        iconName: "edit"
-                                        onTriggered: {PopupUtils.open(edit)}        //SET DIALOG PARAMS
-                                    }
-                                ]
-                            }*/
-                            onClicked: {}
+                        //Monday
+                        Hour {
+                            dbPath: matLunedi.contents.primaOra
+                            indexDay: 0
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 0
-                            ListItemLayout {
-                                id: lun2
-                                title.text: i18n.tr(matLunedi.contents.secondaOra)
-
-                                CheckBox {
-                                    id: lun2_1; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun2_1.checked == true) nLibriLun += 1
-                                        else if (lun2_1.checked == false) nLibriLun -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: lun2_2; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun2_2.checked == true) nQuaderniLun += 1
-                                        else if (lun2_2.checked == false) nQuaderniLun -= 1
-                                    }
-                                }
-                            }
-                            /*trailingActions: ListItemActions {
-                                actions: [
-                                    Action {iconName: "edit"}        ///CIAO A TUTTI VADO IN VACANZA
-                                ]
-                            }*/
-
-                            onClicked: {}
+                        Hour {
+                            dbPath: matLunedi.contents.secondaOra
+                            indexDay: 0
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 0
-                            ListItemLayout {
-                                id: lun3
-                                title.text: i18n.tr(matLunedi.contents.terzaOra)
-
-                                CheckBox {
-                                    id: lun3_1; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun3_1.checked == true) nLibriLun += 1
-                                        else if (lun3_1.checked == false) nLibriLun -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: lun3_2; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun3_2.checked == true) nQuaderniLun += 1
-                                        else if (lun3_2.checked == false) nQuaderniLun -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matLunedi.contents.terzaOra
+                            indexDay: 0
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 0
-                            ListItemLayout {
-                                id: lun4
-                                title.text: i18n.tr(matLunedi.contents.quartaOra)
-
-                                CheckBox {
-                                    id: lun4_1; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun4_1.checked == true) nLibriLun += 1
-                                        else if (lun4_1.checked == false) nLibriLun -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: lun4_2; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun4_2.checked == true) nQuaderniLun += 1
-                                        else if (lun4_2.checked == false) nQuaderniLun -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matLunedi.contents.quartaOra
+                            indexDay: 0
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 0
-                            ListItemLayout {
-                                id: lun5
-                                title.text: i18n.tr(matLunedi.contents.quintaOra)
-
-                                CheckBox {
-                                    id: lun5_1; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun5_1.checked == true) nLibriLun += 1
-                                        else if (lun5_1.checked == false) nLibriLun -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: lun5_2; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun5_2.checked == true) nQuaderniLun += 1
-                                        else if (lun5_2.checked == false) nQuaderniLun -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matLunedi.contents.quintaOra
+                            indexDay: 0
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 0
-                            ListItemLayout {
-                                id: lun6
-                                title.text: i18n.tr(matLunedi.contents.sestaOra)
-
-                                CheckBox {
-                                    id: lun6_1; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun6_1.checked == true) nLibriLun += 1
-                                        else if (lun6_1.checked == false) nLibriLun -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: lun6_2; width:units.gu(3); height:width;
-
-                                    onClicked: {
-                                        if (lun6_2.checked == true) nQuaderniLun += 1
-                                        else if (lun6_2.checked == false) nQuaderniLun -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matLunedi.contents.sestaOra
+                            indexDay: 0
                         }
 
-                        //Martedì
-                        ListItem {
-                            visible: header_sections.selectedIndex === 1
-                            ListItemLayout {
-                                title.text: i18n.tr(matMartedi.contents.primaOra)
-
-                                CheckBox {
-                                    id: mar1_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar1_1.checked == true) nLibriMar += 1
-                                        else if (mar1_1.checked == false) nLibriMar -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mar1_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar1_2.checked == true) nQuaderniMar += 1
-                                        else if (mar1_2.checked == false) nQuaderniMar -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        //Tuesday
+                        Hour {
+                            dbPath: matMartedi.contents.primaOra
+                            indexDay: 1
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 1
-                            ListItemLayout {
-                                title.text: i18n.tr(matMartedi.contents.secondaOra)
-
-                                CheckBox {
-                                    id: mar2_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar2_1.checked == true) nLibriMar += 1
-                                        else if (mar2_1.checked == false) nLibriMar -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mar2_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar2_2.checked == true) nQuaderniMar += 1
-                                        else if (mar2_2.checked == false) nQuaderniMar -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMartedi.contents.secondaOra
+                            indexDay: 1
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 1
-                            ListItemLayout {
-                                title.text: i18n.tr(matMartedi.contents.terzaOra)
-
-                                CheckBox {
-                                    id: mar3_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar3_1.checked == true) nLibriMar += 1
-                                        else if (mar3_1.checked == false) nLibriMar -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mar3_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar3_2.checked == true) nQuaderniMar += 1
-                                        else if (mar3_2.checked == false) nQuaderniMar -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMartedi.contents.terzaOra
+                            indexDay: 1
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 1
-                            ListItemLayout {
-                                title.text: i18n.tr(matMartedi.contents.quartaOra)
-
-                                CheckBox {
-                                    id: mar4_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar4_1.checked == true) nLibriMar += 1
-                                        else if (mar4_1.checked == false) nLibriMar -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mar4_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar4_2.checked == true) nQuaderniMar += 1
-                                        else if (mar4_2.checked == false) nQuaderniMar -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMartedi.contents.quartaOra
+                            indexDay: 1
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 1
-                            ListItemLayout {
-                                title.text: i18n.tr(matMartedi.contents.quintaOra)
-
-                                CheckBox {
-                                    id: mar5_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar5_1.checked == true) nLibriMar += 1
-                                        else if (mar5_1.checked == false) nLibriMar -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mar5_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar5_2.checked == true) nQuaderniMar += 1
-                                        else if (mar5_2.checked == false) nQuaderniMar -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMartedi.contents.quintaOra
+                            indexDay: 1
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 1
-                            ListItemLayout {
-                                title.text: i18n.tr(matMartedi.contents.sestaOra)
-
-                                CheckBox {
-                                    id: mar6_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar6_1.checked == true) nLibriMar += 1
-                                        else if (mar6_1.checked == false) nLibriMar -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mar6_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mar6_2.checked == true) nQuaderniMar += 1
-                                        else if (mar6_2.checked == false) nQuaderniMar -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMartedi.contents.sestaOra
+                            indexDay: 1
                         }
 
-                        //Mercoledì
-                        ListItem {
-                            visible: header_sections.selectedIndex === 2
-                            ListItemLayout {
-                                title.text: i18n.tr(matMercoledi.contents.ora1)
 
-                                CheckBox {
-                                    id: mer1_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer1_1.checked == true) nLibriMer += 1
-                                        else if (mer1_1.checked == false) nLibriMer -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mer1_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer1_2.checked == true) nQuaderniMer += 1
-                                        else if (mer1_2.checked == false) nQuaderniMer -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        property int dbHourIndex: 1
+                        property string dbWed1: "matMercoledi.contents.ora"+dbHourIndex
+                        //Wednesday
+                        Hour {
+                            dbPath: matMercoledi.contents.ora1 //dbWed1      //FIXME
+                            indexDay: 2
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 2
-                            ListItemLayout {
-                                title.text: i18n.tr(matMercoledi.contents.ora2)
-
-                                CheckBox {
-                                    id: mer2_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer2_1.checked == true) nLibriMer += 1
-                                        else if (mer2_1.checked == false) nLibriMer -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mer2_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer2_2.checked == true) nQuaderniMer += 1
-                                        else if (mer2_2.checked == false) nQuaderniMer -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMercoledi.contents.ora2
+                            indexDay: 2
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 2
-                            ListItemLayout {
-                                title.text: i18n.tr(matMercoledi.contents.ora3)
-
-                                CheckBox {
-                                    id: mer3_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer3_1.checked == true) nLibriMer += 1
-                                        else if (mer3_1.checked == false) nLibriMer -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mer3_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer3_2.checked == true) nQuaderniMer += 1
-                                        else if (mer3_2.checked == false) nQuaderniMer -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMercoledi.contents.ora3
+                            indexDay: 2
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 2
-                            ListItemLayout {
-                                title.text: i18n.tr(matMercoledi.contents.ora4)
-
-                                CheckBox {
-                                    id: mer4_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer4_1.checked == true) nLibriMer += 1
-                                        else if (mer4_1.checked == false) nLibriMer -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mer4_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer4_2.checked == true) nQuaderniMer += 1
-                                        else if (mer4_2.checked == false) nQuaderniMer -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMercoledi.contents.ora4
+                            indexDay: 2
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 2
-                            ListItemLayout {
-                                title.text: i18n.tr(matMercoledi.contents.ora5)
-
-                                CheckBox {
-                                    id: mer5_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer5_1.checked == true) nLibriMer += 1
-                                        else if (mer5_1.checked == false) nLibriMer -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mer5_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer5_2.checked == true) nQuaderniMer += 1
-                                        else if (mer5_2.checked == false) nQuaderniMer -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMercoledi.contents.ora5
+                            indexDay: 2
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 2
-                            ListItemLayout {
-                                title.text: i18n.tr(matMercoledi.contents.ora6)
-
-                                CheckBox {
-                                    id: mer6_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer6_1.checked == true) nLibriMer += 1
-                                        else if (mer6_1.checked == false) nLibriMer -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: mer6_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (mer6_2.checked == true) nQuaderniMer += 1
-                                        else if (mer6_2.checked == false) nQuaderniMer -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matMercoledi.contents.ora6
+                            indexDay: 2
                         }
 
-                        //Giovedì
-                        ListItem {
-                            visible: header_sections.selectedIndex === 3
-                            ListItemLayout {
-                                title.text: i18n.tr(matGiovedi.contents.ora1)
 
-                                CheckBox {
-                                    id: gio1_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio1_1.checked == true) nLibriGio += 1
-                                        else if (gio1_1.checked == false) nLibriGio -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: gio1_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio1_2.checked == true) nQuaderniGio += 1
-                                        else if (gio1_2.checked == false) nQuaderniGio -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        //Thursday
+                        Hour {
+                            dbPath: matGiovedi.contents.ora1
+                            indexDay: 3
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 3
-                            ListItemLayout {
-                                title.text: i18n.tr(matGiovedi.contents.ora2)
-
-                                CheckBox {
-                                    id: gio2_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio2_1.checked == true) nLibriGio += 1
-                                        else if (gio2_1.checked == false) nLibriGio -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: gio2_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio2_2.checked == true) nQuaderniGio += 1
-                                        else if (gio2_2.checked == false) nQuaderniGio -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matGiovedi.contents.ora2
+                            indexDay: 3
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 3
-                            ListItemLayout {
-                                title.text: i18n.tr(matGiovedi.contents.ora3)
-
-                                CheckBox {
-                                    id: gio3_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio3_1.checked == true) nLibriGio += 1
-                                        else if (gio3_1.checked == false) nLibriGio -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: gio3_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio3_2.checked == true) nQuaderniGio += 1
-                                        else if (gio3_2.checked == false) nQuaderniGio -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matGiovedi.contents.ora3
+                            indexDay: 3
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 3
-                            ListItemLayout {
-                                title.text: i18n.tr(matGiovedi.contents.ora4)
-
-                                CheckBox {
-                                    id: gio4_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio4_1.checked == true) nLibriGio += 1
-                                        else if (gio4_1.checked == false) nLibriGio -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: gio4_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio4_2.checked == true) nQuaderniGio += 1
-                                        else if (gio4_2.checked == false) nQuaderniGio -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matGiovedi.contents.ora4
+                            indexDay: 3
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 3
-                            ListItemLayout {
-                                title.text: i18n.tr(matGiovedi.contents.ora5)
-
-                                CheckBox {
-                                    id: gio5_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio5_1.checked == true) nLibriGio += 1
-                                        else if (gio5_1.checked == false) nLibriGio -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: gio5_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio5_2.checked == true) nQuaderniGio += 1
-                                        else if (gio5_2.checked == false) nQuaderniGio -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matGiovedi.contents.ora5
+                            indexDay: 3
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 3
-                            ListItemLayout {
-                                title.text: i18n.tr(matGiovedi.contents.ora6)
-
-                                CheckBox {
-                                    id: gio6_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio6_1.checked == true) nLibriGio += 1
-                                        else if (gio6_1.checked == false) nLibriGio -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: gio6_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (gio6_2.checked == true) nQuaderniGio += 1
-                                        else if (gio6_2.checked == false) nQuaderniGio -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matGiovedi.contents.ora6
+                            indexDay: 3
                         }
 
-                        //Venerdì
-                        ListItem {
-                            visible: header_sections.selectedIndex === 4
-                            ListItemLayout {
-                                title.text: i18n.tr(matVenerdi.contents.ora1)
 
-                                CheckBox {
-                                    id: ven1_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven1_1.checked == true) nLibriVen += 1
-                                        else if (ven1_1.checked == false) nLibriVen -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: ven1_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven1_2.checked == true) nQuaderniVen += 1
-                                        else if (ven1_2.checked == false) nQuaderniVen -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        //Friday
+                        Hour {
+                            dbPath: matVenerdi.contents.ora1
+                            indexDay: 4
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 4
-                            ListItemLayout {
-                                title.text: i18n.tr(matVenerdi.contents.ora2)
-
-                                CheckBox {
-                                    id: ven2_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven2_1.checked == true) nLibriVen += 1
-                                        else if (ven2_1.checked == false) nLibriVen -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: ven2_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven2_2.checked == true) nQuaderniVen += 1
-                                        else if (ven2_2.checked == false) nQuaderniVen -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matVenerdi.contents.ora2
+                            indexDay: 4
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 4
-                            ListItemLayout {
-                                title.text: i18n.tr(matVenerdi.contents.ora3)
-
-                                CheckBox {
-                                    id: ven3_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven3_1.checked == true) nLibriVen += 1
-                                        else if (ven3_1.checked == false) nLibriVen -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: ven3_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven3_2.checked == true) nQuaderniVen += 1
-                                        else if (ven3_2.checked == false) nQuaderniVen -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matVenerdi.contents.ora3
+                            indexDay: 4
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 4
-                            ListItemLayout {
-                                title.text: i18n.tr(matVenerdi.contents.ora4)
-
-                                CheckBox {
-                                    id: ven4_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven4_1.checked == true) nLibriVen += 1
-                                        else if (ven4_1.checked == false) nLibriVen -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: ven4_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven4_2.checked == true) nQuaderniVen += 1
-                                        else if (ven4_2.checked == false) nQuaderniVen -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matVenerdi.contents.ora4
+                            indexDay: 4
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 4
-                            ListItemLayout {
-                                title.text: i18n.tr(matVenerdi.contents.ora5)
-
-                                CheckBox {
-                                    id: ven5_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven5_1.checked == true) nLibriVen += 1
-                                        else if (ven5_1.checked == false) nLibriVen -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: ven5_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven5_2.checked == true) nQuaderniVen += 1
-                                        else if (ven5_2.checked == false) nQuaderniVen -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matVenerdi.contents.ora5
+                            indexDay: 4
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 4
-                            ListItemLayout {
-                                title.text: i18n.tr(matVenerdi.contents.ora6)
-
-                                CheckBox {
-                                    id: ven6_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven6_1.checked == true) nLibriVen += 1
-                                        else if (ven6_1.checked == false) nLibriVen -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: ven6_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (ven6_2.checked == true) nQuaderniVen += 1
-                                        else if (ven6_2.checked == false) nQuaderniVen -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matVenerdi.contents.ora6
+                            indexDay: 4
                         }
 
-                        //Sabato
-                        ListItem {
-                            visible: header_sections.selectedIndex === 5
-                            ListItemLayout {
-                                title.text: i18n.tr(matSabato.contents.ora1)
 
-                                CheckBox {
-                                    id: sab1_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (sab1_1.checked == true) nLibriSab += 1
-                                        else if (sab1_1.checked == false) nLibriSab -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: sab1_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (sab1_2.checked == true) nQuaderniSab += 1
-                                        else if (sab1_2.checked == false) nQuaderniSab -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        //Saturday
+                        Hour {
+                            dbPath: matSabato.contents.ora1
+                            indexDay: 5
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 5
-                            ListItemLayout {
-                                title.text: i18n.tr(matSabato.contents.ora2)
-
-                                CheckBox {
-                                    id: sab2_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (sab2_1.checked == true) nLibriSab += 1
-                                        else if (sab2_1.checked == false) nLibriSab -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: sab2_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (sab2_2.checked == true) nQuaderniSab += 1
-                                        else if (sab2_2.checked == false) nQuaderniSab -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matSabato.contents.ora2
+                            indexDay: 5
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 5
-                            ListItemLayout {
-                                title.text: i18n.tr(matSabato.contents.ora3)
-
-                                CheckBox {
-                                    id: sab3_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (sab3_1.checked == true) nLibriSab += 1
-                                        else if (sab3_1.checked == false) nLibriSab -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: sab3_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (sab3_2.checked == true) nQuaderniSab += 1
-                                        else if (sab3_2.checked == false) nQuaderniSab -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matSabato.contents.ora3
+                            indexDay: 5
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 5
-                            ListItemLayout {
-                                title.text: i18n.tr(matSabato.contents.ora4)
-
-                                CheckBox {
-                                    id: sab4_1; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (sab4_1.checked == true) nLibriSab += 1
-                                        else if (sab4_1.checked == false) nLibriSab -= 1
-                                    }
-                                }
-                                CheckBox {
-                                    id: sab4_2; width:units.gu(3); height:width;
-                                    onClicked: {
-                                        if (sab4_2.checked == true) nQuaderniSab += 1
-                                        else if (sab4_2.checked == false) nQuaderniSab -= 1
-                                    }
-                                }
-                            }
-                            onClicked: {}
+                        Hour {
+                            dbPath: matSabato.contents.ora4
+                            indexDay: 5
                         }
 
-                        ListItem {
-                            visible: header_sections.selectedIndex === 0
-                            ListItemLayout {
-                                title.text:i18n.tr("Books: "+nLibriLun)
-                                title.color: UbuntuColors.orange
-                                Label { text: i18n.tr("Exercise books: ")+nQuaderniLun ;color: UbuntuColors.orange}
-
-                            }
-                            onClicked: {}
+                        ExcerciseBookCounter {
+                            indexDay: 0
+                            id: numbersMon
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 1
-                            ListItemLayout {
-                                title.text:i18n.tr("Books: "+nLibriMar)
-                                title.color: UbuntuColors.orange
-                                Label { text: i18n.tr("Exercise books: ")+nQuaderniMar ;color: UbuntuColors.orange}
-
-                            }
-                            onClicked: {}
+                        ExcerciseBookCounter {
+                            indexDay: 1
+                            id: numbersTue
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 2
-                            ListItemLayout {
-                                title.text:i18n.tr("Books: "+nLibriMer)
-                                title.color: UbuntuColors.orange
-                                Label { text: i18n.tr("Exercise books: ")+nQuaderniMer ;color: UbuntuColors.orange}
-
-                            }
-                            onClicked: {}
+                        ExcerciseBookCounter {
+                            indexDay: 2
+                            id: numbersWed
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 3
-                            ListItemLayout {
-                                title.text:i18n.tr("Books: "+nLibriGio)
-                                title.color: UbuntuColors.orange
-                                Label { text: i18n.tr("Exercise books: ")+nQuaderniGio ;color: UbuntuColors.orange}
-
-                            }
-                            onClicked: {}
+                        ExcerciseBookCounter {
+                            indexDay: 3
+                            id: numbersThu
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 4
-                            ListItemLayout {
-                                title.text:i18n.tr("Books: "+nLibriVen)
-                                title.color: UbuntuColors.orange
-                                Label { text: i18n.tr("Exercise books: ")+nQuaderniVen ;color: UbuntuColors.orange}
-
-                            }
-                            onClicked: {}
+                        ExcerciseBookCounter {
+                            indexDay: 4
+                            id: numbersFri
                         }
-                        ListItem {
-                            visible: header_sections.selectedIndex === 5
-                            ListItemLayout {
-                                title.text:i18n.tr("Books: "+nLibriSab)
-                                title.color: UbuntuColors.orange
-                                Label { text: i18n.tr("Exercise books: ")+nQuaderniSab ;color: UbuntuColors.orange}
-
-                            }
-                            onClicked: {}
+                        ExcerciseBookCounter {
+                            indexDay: 5
+                            id: numbersSat
                         }
                     }
+                }
+            }
+
+            //Domenica
+            Sunday {
+                id: sunday
+                visible: header_sections.selectedIndex === 6
+                anchors {
+                    top: pageHeader.bottom
+                    left: parent.left
+                    right: parent.right
+                    bottom: parent.bottom
                 }
             }
         }
     }
 }
-

@@ -7,12 +7,14 @@ QML_FILES += $$files(*.qml,true) \
              $$files(*.js,true)
 
 CONF_FILES +=  School.apparmor \
+               img/Party-Poppers.png \
                Party-Poppers.png \
                schoolhouse.svg \
-               folds.svg \
-               fold1.svg \
+               img/folds.svg \
+               img/fold1.svg \
                fold2.svg \
-               fold3.svg
+               fold3.svg \
+               schoolhouse2.svg
 
 AP_TEST_FILES += tests/autopilot/run \
                  $$files(tests/*.py,true)               
@@ -39,5 +41,10 @@ desktop_file.CONFIG += no_check_exist
 INSTALLS+=config_files qml_files desktop_file
 
 DISTFILES += \
-    Edit.qml
+    Edit.qml \
+    script.js \
+    ExcerciseBookCounter.qml \
+    db.js \
+    SubjectHeader.qml \
+    EditHour.qml
 

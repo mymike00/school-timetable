@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.1.0, 2017-05-23T18:21:27. -->
+<!-- Written by QtCreator 4.1.0, 2017-08-27T00:13:16. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -64,7 +64,7 @@
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">UbuntuSDK for clickable-armhf (GCC armhf-ubuntu-sdk-15.04)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">UbuntuSDK for clickable-armhf (GCC armhf-ubuntu-sdk-15.04)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{974e620d-c7e2-49d9-9e5c-d4b517d87741}</value>
-   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">2</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
@@ -266,9 +266,15 @@
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedFiles">
        <value type="QString">/home/mike/Documenti/PC/App/build-School-UbuntuSDK_for_clickable_armhf_GCC_armhf_ubuntu_sdk_15_04-Release/school.mymike_0.3_armhf.click</value>
        <value type="QString">/home/mike/Documenti/PC/App/build-School-UbuntuSDK_for_clickable_armhf_GCC_armhf_ubuntu_sdk_15_04-Debug/school.mymike_0.2_armhf.click</value>
+       <value type="QString">/home/mike/Documenti/PC/App/build-School-UbuntuSDK_for_clickable_armhf_GCC_armhf_ubuntu_sdk_15_04-Release/school.mymike_0.3.1_armhf.click</value>
+       <value type="QString">/home/mike/Documenti/PC/App/build-School-UbuntuSDK_for_clickable_armhf_GCC_armhf_ubuntu_sdk_15_04-Debug/school.mymike_0.3.1_armhf.click</value>
        <value type="QString">/usr/ubuntu-sdk-ide/share/qtcreator/ubuntu/scripts/qtc_device_applaunch.py</value>
+       <value type="QString">/home/mike/Documenti/PC/App/build-School-UbuntuSDK_for_clickable_armhf_GCC_armhf_ubuntu_sdk_15_04-Profile/school.mymike_0.3.1_armhf.click</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedHosts">
+       <value type="QString">127.0.0.1</value>
+       <value type="QString">127.0.0.1</value>
+       <value type="QString">127.0.0.1</value>
        <value type="QString">127.0.0.1</value>
        <value type="QString">127.0.0.1</value>
        <value type="QString">127.0.0.1</value>
@@ -277,8 +283,14 @@
        <value type="QString">/tmp</value>
        <value type="QString">/tmp</value>
        <value type="QString">/tmp</value>
+       <value type="QString">/tmp</value>
+       <value type="QString">/tmp</value>
+       <value type="QString">/tmp</value>
       </valuelist>
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedSysroots">
+       <value type="QString">/var/lib/lxd/containers/clickable-armhf/rootfs</value>
+       <value type="QString">/var/lib/lxd/containers/clickable-armhf/rootfs</value>
+       <value type="QString">/var/lib/lxd/containers/clickable-armhf/rootfs</value>
        <value type="QString">/var/lib/lxd/containers/clickable-armhf/rootfs</value>
        <value type="QString">/var/lib/lxd/containers/clickable-armhf/rootfs</value>
        <value type="QString">/var/lib/lxd/containers/clickable-armhf/rootfs</value>
@@ -286,7 +298,10 @@
       <valuelist type="QVariantList" key="Qt4ProjectManager.MaemoRunConfiguration.LastDeployedTimes">
        <value type="QDateTime">2017-05-23T18:18:28</value>
        <value type="QDateTime">2017-05-21T17:07:21</value>
-       <value type="QDateTime">2017-05-23T18:18:28</value>
+       <value type="QDateTime">2017-08-03T12:20:02</value>
+       <value type="QDateTime">2017-07-24T16:02:06</value>
+       <value type="QDateTime">2017-08-27T00:12:46</value>
+       <value type="QDateTime">2017-08-27T00:12:45</value>
       </valuelist>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">2</value>
@@ -349,7 +364,7 @@
     <value type="uint" key="RunConfiguration.QmlDebugServerPort">3768</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
-    <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
+    <value type="bool" key="RunConfiguration.UseMultiProcess">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="bool" key="UbuntuRemoteRunConfiguration.ForceInstall">false</value>
@@ -364,7 +379,7 @@
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">UbuntuSDK for desktop (GCC amd64-ubuntu-sdk-16.04)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">UbuntuSDK for desktop (GCC amd64-ubuntu-sdk-16.04)</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{9b069850-109a-47a0-bdac-199c62e6906a}</value>
-   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">1</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">-1</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">

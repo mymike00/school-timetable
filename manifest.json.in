@@ -10,6 +10,6 @@
         }
     },
     "version": "0.3.1",
-    "maintainer": "Mike <miguel2000@livecom.it>",
+    "maintainer": "Michele Castellazzi <miguel2000@livecom.it>",
     "framework": "ubuntu-sdk-15.04"
 }

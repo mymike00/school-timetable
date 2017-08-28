@@ -173,32 +173,6 @@ MainView {
             }
             BackGround {}
 
-            Component {
-                id: edit
-                Dialog {
-                    id: edit2
-                    title: i18n.tr("Modifica Materia")
-                    TextField {
-                        id: editField
-                    }
-                    Button {
-                        text: i18n.tr("Ok")
-                        color: UbuntuColors.green
-                        onClicked: {
-                            var c = matLunedi.contents
-                            c['primaOra'] = editField.text
-                            matLunedi.contents = c
-                            lun1.title.text=i18n.tr(matLunedi.contents.primaOra)
-                            PopupUtils.close(edit2)
-                        }
-                    }
-                    Button {
-                        text: i18n.tr("cancel")
-                        onClicked: PopupUtils.close(edit2)
-                    }
-                }
-            }
-
             ScrollView {
                 id: page_scrollview
                 anchors {

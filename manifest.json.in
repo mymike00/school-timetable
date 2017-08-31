@@ -1,0 +1,15 @@
+{
+    "name": "school.mymike",
+    "description": "Simply app to manage the weekly school timetable",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Orario Scolastico",
+    "hooks": {
+        "School": {
+            "apparmor": "School/School.apparmor",
+            "desktop": "School/School.desktop"
+        }
+    },
+    "version": "0.3.2",
+    "maintainer": "Michele Castellazzi <miguel2000@livecom.it>",
+    "framework": "ubuntu-sdk-15.04"
+}

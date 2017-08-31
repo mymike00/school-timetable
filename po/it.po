@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-31 16:52+0000\n"
+"PO-Revision-Date: 2017-08-26 16:50+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:8
+msgid "About"
+msgstr "Informazioni"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:16
+msgid "Back"
+msgstr "Indietro"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:44
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:132
+msgid "School TimeTable"
+msgstr "Orario Scolastico"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:50
+msgid "Version "
+msgstr "Versione "
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:75
+msgid "Released under the terms of the GNU GPL v3"
+msgstr "Rilasciato sotto i termini della licenza GNU GPL v3"
+
+#: /home/mike/Documenti/PC/App/School/School/About.qml:86
+msgid "Source code available on "
+msgstr "Codice sorgente disponibile a"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:9
+msgid "Edit TimeTable"
+msgstr "Modifica Orario"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:23
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:142
+msgid "Close"
+msgstr "Chiudi"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:28
+msgid "Accept"
+msgstr "Accetta"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:51
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:170
+msgid "Mon"
+msgstr "Lun"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:51
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:170
+msgid "Tue"
+msgstr "Mar"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:51
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:170
+msgid "Wed"
+msgstr "Mer"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:51
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:170
+msgid "Thu"
+msgstr "Gio"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:51
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:170
+msgid "Fri"
+msgstr "Ven"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:51
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:170
+msgid "Sat"
+msgstr "Sab"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:51
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:169
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:170
+msgid "Sun"
+msgstr "Dom"
+
+#: /home/mike/Documenti/PC/App/School/School/Edit.qml:96
+#: /home/mike/Documenti/PC/App/School/School/SubjectHeader.qml:8
+msgid "Subjects"
+msgstr "Materie"
+
+#: /home/mike/Documenti/PC/App/School/School/EditHour.qml:18
+msgid "Insert a subject"
+msgstr "Inserisci una materia"
+
+#: /home/mike/Documenti/PC/App/School/School/ExcerciseBookCounter.qml:9
+msgid "№ of Books -> Exercise Books: "
+msgstr "№ di Libri -> Quaderni: "
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:147
+msgid "Edit"
+msgstr "Modifica"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:153
+msgid "Info"
+msgstr "Info"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Monday"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Tuesday"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Wednesday"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Thursday"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Friday"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Saturday"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:168
+msgid "Sunday"
+msgstr ""
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:228
+#, fuzzy
+msgid "Edit Subject"
+msgstr "Materie"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:233
+msgid "Ok"
+msgstr "Ok"
+
+#: /home/mike/Documenti/PC/App/School/School/Main.qml:244
+msgid "cancel"
+msgstr "annulla"
+
+#: /home/mike/Documenti/PC/App/School/School/Sunday.qml:27
+msgid "You don't go to School"
+msgstr "Non vai a scuola"
+
+#: /home/mike/Documenti/PC/App/School/School/Sunday.qml:33
+msgid "You're on Holiday"
+msgstr "Sei in vacanza"
+
+#~ msgid "Modifica Materia"
+#~ msgstr "Modifica Materia"

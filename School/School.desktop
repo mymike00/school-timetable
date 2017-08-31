@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=School TimeTable
+Exec=qmlscene %U School/Main.qml
+Icon=School/schoolhouse2.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true
+X-Ubuntu-Splash-Color=#bf3421
+X-Ubuntu-Splash-Image=School/schoolhouse2.svg
+Name[it]=Orario Scolastico

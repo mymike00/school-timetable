@@ -13,8 +13,8 @@
    id="svg3336"
    style="enable-background:new"
    height="2048"
-   viewBox="0 0 1024.8 2048"
-   width="1024.8"
+   viewBox="0 0 1024 2048"
+   width="1024"
    version="1.1"
    inkscape:version="0.91 r13725"
    sodipodi:docname="fold3.svg">
@@ -31,9 +31,9 @@
      inkscape:window-height="744"
      id="namedview4176"
      showgrid="false"
-     inkscape:zoom="0.14819336"
-     inkscape:cx="-126.49162"
-     inkscape:cy="505.79587"
+     inkscape:zoom="0.20957706"
+     inkscape:cx="403.11046"
+     inkscape:cy="902.23436"
      inkscape:window-x="65"
      inkscape:window-y="24"
      inkscape:window-maximized="1"
@@ -181,7 +181,7 @@
   </metadata>
   <path
      inkscape:connector-curvature="0"
-     d="M 0,1024 1024.8,0 l 0,1024 0,1024 L 0,2048 Z"
+     d="M 0,1024 1024,0 l 0,1024 0,1024 -1024,0 z"
      style="color:#000000;opacity:1;fill:#000000;fill-opacity:1;enable-background:accumulate"
      id="path4305-3"
      sodipodi:nodetypes="cccccc" />

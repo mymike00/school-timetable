@@ -10,31 +10,51 @@ Page {
         StyleHints {
             //foregroundColor: UbuntuColors.coolGrey
             backgroundColor:  "transparent"
-            dividerColor: "transparent"
+            //dividerColor: "transparent"
         }
-        leadingActionBar.actions: null
+        leadingActionBar.actions: [
+            Action {
+                iconName: "back"
+                visible: isFirstStart()
+                onTriggered: {
+                    pageStack.pop()
+                    //if (!isFirstStart())
+                        //header_sections.updateSelectedIndex()
+                }
+                text: i18n.tr("Close")
+                shortcut: "esc"
+            }
+        ]
         trailingActionBar.actions: [
             Action {
                 iconName: "close"
+                visible: !isFirstStart()
                 onTriggered: {
                     pageStack.pop()
-                    header_sections.selectedIndex = selIndex
+                    //if (!isFirstStart())
+                        //header_sections.updateSelectedIndex()
                 }
                 text: i18n.tr("Close")
                 shortcut: "esc"
             },
             Action {
-                iconName: "ok"
+                iconName: isFirstStart() ? "tick" : "ok"
                 text: i18n.tr("Accept")
                 onTriggered: {
-                    accept(monday1.text(),monday2.text(),monday3.text(),monday4.text(),monday5.text(),monday6.text(),
-                           tuesday1.text(),tuesday2.text(),tuesday3.text(),tuesday4.text(),tuesday5.text(),tuesday6.text(),
-                           wednesday1.text(),wednesday2.text(),wednesday3.text(),wednesday4.text(),wednesday5.text(),wednesday6.text(),
-                           thursday1.text(),thursday2.text(),thursday3.text(),thursday4.text(),thursday5.text(),thursday6.text(),
-                           friday1.text(),friday2.text(),friday3.text(),friday4.text(),friday5.text(),friday6.text(),
-                           saturday1.text(),saturday2.text(),saturday3.text(),saturday4.text())
-                    pageStack.pop()
-                    header_sections.selectedIndex = selIndex
+                    if (isFirstStart()) {
+                        accept(monday1.text(),monday2.text(),monday3.text(),monday4.text(),monday5.text(),monday6.text(),
+                               tuesday1.text(),tuesday2.text(),tuesday3.text(),tuesday4.text(),tuesday5.text(),tuesday6.text(),
+                               wednesday1.text(),wednesday2.text(),wednesday3.text(),wednesday4.text(),wednesday5.text(),wednesday6.text(),
+                               thursday1.text(),thursday2.text(),thursday3.text(),thursday4.text(),thursday5.text(),thursday6.text(),
+                               friday1.text(),friday2.text(),friday3.text(),friday4.text(),friday5.text(),friday6.text(),
+                               saturday1.text(),saturday2.text(),saturday3.text(),saturday4.text())
+                        firstEdit()
+                        pageStack.push(Qt.resolvedUrl("MainPage.qml"))
+                    }
+                    else {
+                        pageStack.pop()
+                        //header_sections.selectedIndex = selIndex
+                    }
                 }
                 shortcut: "enter"
             }
@@ -45,14 +65,30 @@ Page {
             anchors {
                 left: parent.left
                 right: parent.right
-                bottom: parent.bottom
             }
-            selectedIndex: selIndex
-            model: [i18n.tr("Mon"),i18n.tr("Tue"),i18n.tr("Wed"),i18n.tr("Thu"),i18n.tr("Fri"),i18n.tr("Sat"),i18n.tr("Sun")]
-            onSelectedIndexChanged: selIndex = selectedIndex
+            property var modelExtended: [i18n.tr("Monday"),i18n.tr("Tuesday"),i18n.tr("Wednesday"),i18n.tr("Thursday"),i18n.tr("Friday"),i18n.tr("Saturday"),i18n.tr("Sunday")]
+            property var modelCompact: [i18n.tr("Mon"),i18n.tr("Tue"),i18n.tr("Wed"),i18n.tr("Thu"),i18n.tr("Fri"),i18n.tr("Sat"),i18n.tr("Sun")]
+            property bool modelIsCompact: true
+
+            selectedIndex: getSelDay()
+            model: modelCompact
+            onSelectedIndexChanged: setSelDay(selectedIndex)
+            onWidthChanged: {
+                resizing = true
+
+                if (width > units.gu(45) && header_sections_edit.modelIsCompact) {
+                    header_sections_edit.model = header_sections_edit.modelExtended
+                    header_sections_edit.modelIsCompact=false
+                }
+                else if (width <= units.gu(45) && !header_sections_edit.modelIsCompact) {
+                    header_sections_edit.model = header_sections_edit.modelCompact
+                    header_sections_edit.modelIsCompact=true
+                }
+                resizing = false
+                header_sections_edit.selectedIndex = getSelDay()
+            }
         }
     }
-    Component.onCompleted: header_sections_edit.selectedIndex = selIndex
 
     BackGround {}
 

@@ -46,5 +46,8 @@ DISTFILES += \
     ExcerciseBookCounter.qml \
     db.js \
     SubjectHeader.qml \
-    EditHour.qml
+    EditHour.qml \
+    FirstStart.qml \
+    MainPage.qml \
+    Padding.qml
 

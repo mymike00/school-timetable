@@ -16,7 +16,7 @@ Column {
         x: units.gu(2)
         id: textField
         placeholderText: i18n.tr("Insert a subject")
-        text: dbPath
+        text: isFirstStart() ? "" : dbPath
         width: parent.width - units.gu(4)
         onActiveFocusChanged: scroll ? (activeFocus ? timerScroll.start() : "") : ""
     }

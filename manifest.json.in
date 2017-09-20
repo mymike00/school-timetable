@@ -9,7 +9,11 @@
             "desktop": "School/School.desktop"
         }
     },
+<<<<<<< HEAD
     "version": "0.3.2",
+=======
+    "version": "0.3.1",
+>>>>>>> 7be9afbe2a48bde15faa2427233116a540ee496b
     "maintainer": "Michele Castellazzi <miguel2000@livecom.it>",
     "framework": "ubuntu-sdk-15.04"
 }

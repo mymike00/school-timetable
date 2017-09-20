@@ -9,7 +9,7 @@ Rectangle {
 
     Image {
         source: "fold3.svg"
-        y: (parent.height-this.width)/2
+        y: (pageStack.height-this.width)/2
         anchors {
             left: parent.left
             right: parent.right
@@ -18,15 +18,6 @@ Rectangle {
         height: width*2
         opacity: 0.02
     }
-    /*Image {
-        source: "fold4.svg"
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.centerIn: parent.centerIn
-        width: height
-        opacity: 0.02
-    }*/
-
     Image {
         source: "fold2.svg"
         anchors.fill: parent

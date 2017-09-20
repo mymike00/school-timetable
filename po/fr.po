@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 19:04+0000\n"
-"PO-Revision-Date: 2017-08-28 00:22+0200\n"
+"PO-Revision-Date: 2017-09-20 21:43+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -60,37 +60,37 @@ msgstr "Accepter"
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Monday"
-msgstr ""
+msgstr "Lundi"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Tuesday"
-msgstr ""
+msgstr "Mardi"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Wednesday"
-msgstr ""
+msgstr "Mercredi"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Thursday"
-msgstr ""
+msgstr "Jeudi"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Friday"
-msgstr ""
+msgstr "Vendredi"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Saturday"
-msgstr ""
+msgstr "Samedi"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Sunday"
-msgstr ""
+msgstr "Dimanches"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:70
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:42
@@ -149,7 +149,7 @@ msgstr "Livres d'exercices[nbsp]: "
 
 #: /home/mike/Documenti/PC/App/School/School/FirstStart.qml:10
 msgid "Welcome!"
-msgstr ""
+msgstr "Bienvenue!"
 
 #: /home/mike/Documenti/PC/App/School/School/FirstStart.qml:32
 msgid ""
@@ -170,9 +170,8 @@ msgid "Info"
 msgstr "Informations"
 
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:90
-#, fuzzy
 msgid "Edit Subject"
-msgstr "MatiÃ¨res"
+msgstr "Modifier MatiÃ¨re"
 
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:95
 msgid "Ok"

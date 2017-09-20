@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-09-20 19:04+0000\n"
-"PO-Revision-Date: 2017-08-26 16:50+0200\n"
+"PO-Revision-Date: 2017-09-20 21:37+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -41,7 +41,7 @@ msgstr "Rilasciato sotto i termini della licenza GNU GPL v3"
 
 #: /home/mike/Documenti/PC/App/School/School/About.qml:86
 msgid "Source code available on "
-msgstr "Codice sorgente disponibile a"
+msgstr "Codice sorgente disponibile su"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:9
 msgid "Edit TimeTable"
@@ -60,37 +60,37 @@ msgstr "Accetta"
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Monday"
-msgstr ""
+msgstr "Lunedì"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Tuesday"
-msgstr ""
+msgstr "Martedì"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Wednesday"
-msgstr ""
+msgstr "Mercoledì"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Thursday"
-msgstr ""
+msgstr "Giovedì"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Friday"
-msgstr ""
+msgstr "Venerdì"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Saturday"
-msgstr ""
+msgstr "Sabato"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Sunday"
-msgstr ""
+msgstr "Domenica"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:70
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:42
@@ -149,17 +149,19 @@ msgstr "№ di Libri -> Quaderni: "
 
 #: /home/mike/Documenti/PC/App/School/School/FirstStart.qml:10
 msgid "Welcome!"
-msgstr ""
+msgstr "Benvenuto!"
 
 #: /home/mike/Documenti/PC/App/School/School/FirstStart.qml:32
 msgid ""
 "This is a must-have app for all students who wants to manage their own "
 "weekly school timetable"
 msgstr ""
+"Questa app è da avere per tutti gli studenti che vogliono gestire il "
+"proprio orario scolastico settimanale"
 
 #: /home/mike/Documenti/PC/App/School/School/FirstStart.qml:55
 msgid "Start managing your TimeTable"
-msgstr ""
+msgstr "Inizia a gestire il tuo Orario"
 
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:25
 msgid "Edit"
@@ -170,9 +172,8 @@ msgid "Info"
 msgstr "Info"
 
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:90
-#, fuzzy
 msgid "Edit Subject"
-msgstr "Materie"
+msgstr "Modifica Materie"
 
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:95
 msgid "Ok"

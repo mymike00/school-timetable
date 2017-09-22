@@ -20,7 +20,7 @@ msgstr ""
 
 #: /home/mike/Documenti/PC/App/School/School/About.qml:8
 msgid "About"
-msgstr "Ã propos"
+msgstr "À propos"
 
 #: /home/mike/Documenti/PC/App/School/School/About.qml:16
 msgid "Back"
@@ -37,7 +37,7 @@ msgstr "Version "
 
 #: /home/mike/Documenti/PC/App/School/School/About.qml:75
 msgid "Released under the terms of the GNU GPL v3"
-msgstr "DistribuÃ© selon les termes de la licence GNU GPL v3"
+msgstr "Distribué selon les termes de la licence GNU GPL v3"
 
 #: /home/mike/Documenti/PC/App/School/School/About.qml:86
 msgid "Source code available on "
@@ -90,7 +90,7 @@ msgstr "Samedi"
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:69
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:41
 msgid "Sunday"
-msgstr "Dimanches"
+msgstr "Dimanche"
 
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:70
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:42
@@ -137,29 +137,31 @@ msgstr "Dim"
 #: /home/mike/Documenti/PC/App/School/School/Edit.qml:132
 #: /home/mike/Documenti/PC/App/School/School/SubjectHeader.qml:8
 msgid "Subjects"
-msgstr "MatiÃ¨res"
+msgstr "Matières"
 
 #: /home/mike/Documenti/PC/App/School/School/EditHour.qml:18
 msgid "Insert a subject"
-msgstr "InsÃ©rer une matiÃ¨re"
+msgstr "Insérer une matière"
 
 #: /home/mike/Documenti/PC/App/School/School/ExcerciseBookCounter.qml:9
 msgid "№ of Books -> Exercise Books: "
-msgstr "Livres d'exercices[nbsp]: "
+msgstr "Nombre de livres -> Livres d'exercices[nbsp]: "
 
 #: /home/mike/Documenti/PC/App/School/School/FirstStart.qml:10
 msgid "Welcome!"
-msgstr "Bienvenue!"
+msgstr "Bienvenue !"
 
 #: /home/mike/Documenti/PC/App/School/School/FirstStart.qml:32
 msgid ""
 "This is a must-have app for all students who wants to manage their own "
 "weekly school timetable"
 msgstr ""
+"Ceci est une application incontournable pour tous les étudiants qui veulent gérer leur propre "
+"emploi du temps scolaire hebdomadaire"
 
 #: /home/mike/Documenti/PC/App/School/School/FirstStart.qml:55
 msgid "Start managing your TimeTable"
-msgstr ""
+msgstr "Commencez par définir votre emploi du temps"
 
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:25
 msgid "Edit"
@@ -171,7 +173,7 @@ msgstr "Informations"
 
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:90
 msgid "Edit Subject"
-msgstr "Modifier MatiÃ¨re"
+msgstr "Modifier la matière"
 
 #: /home/mike/Documenti/PC/App/School/School/MainPage.qml:95
 msgid "Ok"
@@ -183,11 +185,11 @@ msgstr "Annuler"
 
 #: /home/mike/Documenti/PC/App/School/School/Sunday.qml:33
 msgid "You don't go to School"
-msgstr "Tu ne vas pas Ã  l'Ã©cole"
+msgstr "Tu ne vas pas à l'école"
 
 #: /home/mike/Documenti/PC/App/School/School/Sunday.qml:42
 msgid "You're on Holiday"
 msgstr "Tu es en vacances"
 
 #~ msgid "Modifica Materia"
-#~ msgstr "Modifier la matiÃ¨re"
+#~ msgstr "Modifier la matière"

@@ -1,5 +1,6 @@
 import QtQuick 2.4
 import Ubuntu.Components 1.3
+import Qt.labs.settings 1.0
 import "script.js" as Js
 
 Page {
@@ -15,6 +16,7 @@ Page {
                 iconName: "back"
                 text: i18n.tr("Back")
                 onTriggered: pageStack.pop()
+                shortcut: "esc"
             }
         ]
     }
@@ -47,7 +49,7 @@ Page {
                 }
 
                 Text {
-                    text: i18n.tr("Version ") + "0.3.2"
+                    text: i18n.tr("Version ") + "0.3.3"
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
             }
@@ -91,6 +93,5 @@ Page {
                 }
             }
         }
-
     }
 }

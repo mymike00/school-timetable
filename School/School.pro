@@ -14,10 +14,12 @@ CONF_FILES +=  School.apparmor \
                img/fold1.svg \
                fold2.svg \
                fold3.svg \
-               schoolhouse2.svg
+               schoolhouse2.svg \
+               Splash.png \
+               Splash.svg
 
 AP_TEST_FILES += tests/autopilot/run \
-                 $$files(tests/*.py,true)               
+                 $$files(tests/*.py,true)
 
 OTHER_FILES += $${CONF_FILES} \
                $${QML_FILES} \
@@ -32,7 +34,7 @@ qml_files.files += $${QML_FILES}
 config_files.path = /School
 config_files.files += $${CONF_FILES}
 
-#install the desktop file, a translated version is 
+#install the desktop file, a translated version is
 #automatically created in the build directory
 desktop_file.path = /School
 desktop_file.files = $$OUT_PWD/School.desktop
@@ -49,5 +51,5 @@ DISTFILES += \
     EditHour.qml \
     FirstStart.qml \
     MainPage.qml \
-    Padding.qml
-
+    Padding.qml \
+    SectionsDays.qml

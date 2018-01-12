@@ -41,52 +41,26 @@ Page {
                 iconName: isFirstStart() ? "tick" : "ok"
                 text: i18n.tr("Accept")
                 onTriggered: {
+                    accept(monday1.text(),monday2.text(),monday3.text(),monday4.text(),monday5.text(),monday6.text(),
+                           tuesday1.text(),tuesday2.text(),tuesday3.text(),tuesday4.text(),tuesday5.text(),tuesday6.text(),
+                           wednesday1.text(),wednesday2.text(),wednesday3.text(),wednesday4.text(),wednesday5.text(),wednesday6.text(),
+                           thursday1.text(),thursday2.text(),thursday3.text(),thursday4.text(),thursday5.text(),thursday6.text(),
+                           friday1.text(),friday2.text(),friday3.text(),friday4.text(),friday5.text(),friday6.text(),
+                           saturday1.text(),saturday2.text(),saturday3.text(),saturday4.text())
                     if (isFirstStart()) {
-                        accept(monday1.text(),monday2.text(),monday3.text(),monday4.text(),monday5.text(),monday6.text(),
-                               tuesday1.text(),tuesday2.text(),tuesday3.text(),tuesday4.text(),tuesday5.text(),tuesday6.text(),
-                               wednesday1.text(),wednesday2.text(),wednesday3.text(),wednesday4.text(),wednesday5.text(),wednesday6.text(),
-                               thursday1.text(),thursday2.text(),thursday3.text(),thursday4.text(),thursday5.text(),thursday6.text(),
-                               friday1.text(),friday2.text(),friday3.text(),friday4.text(),friday5.text(),friday6.text(),
-                               saturday1.text(),saturday2.text(),saturday3.text(),saturday4.text())
                         firstEdit()
                         pageStack.push(Qt.resolvedUrl("MainPage.qml"))
                     }
                     else {
                         pageStack.pop()
-                        //header_sections.selectedIndex = selIndex
                     }
                 }
                 shortcut: "enter"
             }
 
         ]
-        extension: Sections {
+        extension: SectionsDays {
             id: header_sections_edit
-            anchors {
-                left: parent.left
-                right: parent.right
-            }
-            property var modelExtended: [i18n.tr("Monday"),i18n.tr("Tuesday"),i18n.tr("Wednesday"),i18n.tr("Thursday"),i18n.tr("Friday"),i18n.tr("Saturday"),i18n.tr("Sunday")]
-            property var modelCompact: [i18n.tr("Mon"),i18n.tr("Tue"),i18n.tr("Wed"),i18n.tr("Thu"),i18n.tr("Fri"),i18n.tr("Sat"),i18n.tr("Sun")]
-            property bool modelIsCompact: true
-
-            selectedIndex: getSelDay()
-            model: modelCompact
-            onSelectedIndexChanged: setSelDay(selectedIndex)
-            onWidthChanged: {
-                resizing = true
-
-                if (width > units.gu(45) && header_sections_edit.modelIsCompact) {
-                    header_sections_edit.model = header_sections_edit.modelExtended
-                    header_sections_edit.modelIsCompact=false
-                }
-                else if (width <= units.gu(45) && !header_sections_edit.modelIsCompact) {
-                    header_sections_edit.model = header_sections_edit.modelCompact
-                    header_sections_edit.modelIsCompact=true
-                }
-                resizing = false
-                header_sections_edit.selectedIndex = getSelDay()
-            }
         }
     }
 
@@ -95,11 +69,7 @@ Page {
     Timer {
         id: timerScroll
         interval: 200; running: false; repeat: false
-        onTriggered: {
-            console.log("timer finito!")
-            page_flickable.flick(0,-1300)
-            //lunediOra6.forceActiveFocus()
-        }
+        onTriggered: page_flickable.flick(0,-1300)
     }
 
     ScrollView {
@@ -142,24 +112,6 @@ Page {
                 }
 
                 //Lunedì
-                /*ListItem {
-                    visible: header_sections_edit.selectedIndex === 0
-                    focus : false
-                    ListItemLayout {
-                        id: lun1
-                        focus : false
-                        //title.text: i18n.tr(matLunedi.contents.primaOra)
-                        TextField  {
-                            focus: true
-                            //InputMethod.extensions: { "enterKeyText": i18n.dtr("address-book-app", "Next") }
-                            id: lunediOra2
-                            hasClearButton: true
-                            placeholderText: i18n.tr("Insert a subject")
-                            text: i18n.tr(matLunedi.contents.primaOra)
-                        }
-                    }
-
-                }*/
                 EditHour {
                     id: monday1
                     dbPath: matLunedi.contents.primaOra

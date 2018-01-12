@@ -48,16 +48,16 @@ ListItem {
 
 
     onClicked: {}
-    function refreshBook() {
+    function refreshBook(animation) {
         highlightBook.stop();
         //console.log("refreshBook: "+Js.numbers)
         bookButton.text = numbers[indexDay][0];
-        highlightBook.start();
+        animation ? highlightBook.start() : ""
     }
-    function refreshExercise() {
+    function refreshExercise(animation) {
         highlightExercise.stop();
         //console.log("refreshExercise: "+Js.numbers)
         exerciseButton.text = numbers[indexDay][1];
-        highlightExercise.start();
+        animation ? highlightExercise.start() : ""
     }
 }

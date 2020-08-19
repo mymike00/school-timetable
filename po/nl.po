@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-12 22:35+0000\n"
+"PO-Revision-Date: 2020-07-26 17:08+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+
+#: /home/mike/Documenti/UTapps/School/School/About.qml:9
+msgid "About"
+msgstr "Over"
+
+#: /home/mike/Documenti/UTapps/School/School/About.qml:17
+msgid "Back"
+msgstr "Vorige"
+
+#: /home/mike/Documenti/UTapps/School/School/About.qml:46
+#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:26
+msgid "School TimeTable"
+msgstr "Schoolroosters"
+
+#: /home/mike/Documenti/UTapps/School/School/About.qml:52
+msgid "Version "
+msgstr "Versie "
+
+#: /home/mike/Documenti/UTapps/School/School/About.qml:77
+msgid "Released under the terms of the GNU GPL v3"
+msgstr "Uitgebracht onder de voorwaarden van de GNU GPL v3"
+
+#: /home/mike/Documenti/UTapps/School/School/About.qml:88
+msgid "Source code available on "
+msgstr "De broncode is beschikbaar op "
+
+#: /home/mike/Documenti/UTapps/School/School/Edit.qml:9
+msgid "Edit TimeTable"
+msgstr "Rooster aanpassen"
+
+#: /home/mike/Documenti/UTapps/School/School/Edit.qml:24
+#: /home/mike/Documenti/UTapps/School/School/Edit.qml:37
+#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:38
+#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:66
+msgid "Close"
+msgstr "Sluiten"
+
+#: /home/mike/Documenti/UTapps/School/School/Edit.qml:42
+#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:72
+msgid "Accept"
+msgstr "Oké"
+
+#: /home/mike/Documenti/UTapps/School/School/Edit.qml:102
+#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:453
+#: /home/mike/Documenti/UTapps/School/School/SubjectHeader.qml:8
+msgid "Subjects"
+msgstr "Vakken"
+
+#: /home/mike/Documenti/UTapps/School/School/EditHour.qml:24
+msgid "Insert a subject"
+msgstr "Voer een vak in"
+
+#: /home/mike/Documenti/UTapps/School/School/ExcerciseBookCounter.qml:9
+msgid "№ of Books -> Exercise Books: "
+msgstr "Aantal boeken -> Leerboeken: "
+
+#: /home/mike/Documenti/UTapps/School/School/FirstStart.qml:10
+msgid "Welcome!"
+msgstr "Welkom!"
+
+#: /home/mike/Documenti/UTapps/School/School/FirstStart.qml:35
+msgid ""
+"This is a must-have app for all students who wants to manage their own "
+"weekly school timetable"
+msgstr ""
+"Deze app is een must-have voor alle studenten die hun eigen wekelijkse "
+"schoolrooster willen beheren"
+
+#: /home/mike/Documenti/UTapps/School/School/FirstStart.qml:58
+msgid "Start managing your TimeTable"
+msgstr "Aan de slag"
+
+#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:44
+msgid "Edit"
+msgstr "Aanpassen"
+
+#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:52
+msgid "Info"
+msgstr "Informatie"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+msgid "Monday"
+msgstr "maandag"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+msgid "Tuesday"
+msgstr "dinsdag"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+msgid "Wednesday"
+msgstr "woensdag"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+msgid "Thursday"
+msgstr "donderdag"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+msgid "Friday"
+msgstr "vrijdag"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+msgid "Saturday"
+msgstr "zaterdag"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+msgid "Sunday"
+msgstr "zondag"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+msgid "Mon"
+msgstr "ma"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+msgid "Tue"
+msgstr "di"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+msgid "Wed"
+msgstr "woe"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+msgid "Thu"
+msgstr "do"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+msgid "Fri"
+msgstr "vrij"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+msgid "Sat"
+msgstr "za"
+
+#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+msgid "Sun"
+msgstr "zo"
+
+#: /home/mike/Documenti/UTapps/School/School/Sunday.qml:33
+msgid "You don't go to School"
+msgstr "Je gaat niet naar school"
+
+#: /home/mike/Documenti/UTapps/School/School/Sunday.qml:42
+msgid "You're on Holiday"
+msgstr "Je hebt vakantie"

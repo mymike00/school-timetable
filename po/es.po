@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-12 22:35+0000\n"
+"POT-Creation-Date: 2025-08-26 00:17+0000\n"
 "PO-Revision-Date: 2017-09-23 18:52+0200\n"
 "Last-Translator: advocatux <advocatux@airpost.net>\n"
 "Language-Team: UBports Spanish Team\n"
@@ -19,66 +19,87 @@ msgstr ""
 "X-Generator: handmade for you\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: /home/mike/Documenti/UTapps/School/School/About.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/About.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/About.qml:9
 msgid "About"
 msgstr "Acerca de"
 
-#: /home/mike/Documenti/UTapps/School/School/About.qml:17
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/About.qml:17
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/About.qml:17
 msgid "Back"
 msgstr "Atrás"
 
-#: /home/mike/Documenti/UTapps/School/School/About.qml:46
-#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:26
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/About.qml:46
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/MainPage.qml:26
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/About.qml:46
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/MainPage.qml:26
 msgid "School TimeTable"
 msgstr "Horario escolar"
 
-#: /home/mike/Documenti/UTapps/School/School/About.qml:52
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/About.qml:52
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/About.qml:52
 msgid "Version "
 msgstr "Versión"
 
-#: /home/mike/Documenti/UTapps/School/School/About.qml:77
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/About.qml:77
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/About.qml:77
 msgid "Released under the terms of the GNU GPL v3"
 msgstr "Publicado bajo los términos de la GNU GPL v3"
 
-#: /home/mike/Documenti/UTapps/School/School/About.qml:88
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/About.qml:88
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/About.qml:88
 msgid "Source code available on "
 msgstr "El código fuente está disponible en "
 
-#: /home/mike/Documenti/UTapps/School/School/Edit.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/Edit.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/Edit.qml:9
 msgid "Edit TimeTable"
 msgstr "Editar horario"
 
-#: /home/mike/Documenti/UTapps/School/School/Edit.qml:24
-#: /home/mike/Documenti/UTapps/School/School/Edit.qml:37
-#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:38
-#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:66
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/Edit.qml:24
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/Edit.qml:37
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/MainPage.qml:38
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/MainPage.qml:66
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/Edit.qml:24
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/Edit.qml:37
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/MainPage.qml:38
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/MainPage.qml:66
 msgid "Close"
 msgstr "Cerrar"
 
-#: /home/mike/Documenti/UTapps/School/School/Edit.qml:42
-#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:72
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/Edit.qml:42
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/MainPage.qml:72
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/Edit.qml:42
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/MainPage.qml:72
 msgid "Accept"
 msgstr "Aceptar"
 
-#: /home/mike/Documenti/UTapps/School/School/Edit.qml:102
-#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:453
-#: /home/mike/Documenti/UTapps/School/School/SubjectHeader.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/Edit.qml:102
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/MainPage.qml:453
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SubjectHeader.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/Edit.qml:102
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/MainPage.qml:453
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SubjectHeader.qml:8
 msgid "Subjects"
 msgstr "Asignaturas"
 
-#: /home/mike/Documenti/UTapps/School/School/EditHour.qml:24
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/EditHour.qml:24
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/EditHour.qml:24
 msgid "Insert a subject"
 msgstr "Introducir una asignatura"
 
-#: /home/mike/Documenti/UTapps/School/School/ExcerciseBookCounter.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/ExcerciseBookCounter.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/ExcerciseBookCounter.qml:9
 msgid "№ of Books -> Exercise Books: "
 msgstr "№ de libros -> Libros de ejercicios: "
 
-#: /home/mike/Documenti/UTapps/School/School/FirstStart.qml:10
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/FirstStart.qml:10
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/FirstStart.qml:10
 msgid "Welcome!"
 msgstr "¡Bienvenido/a!"
 
-#: /home/mike/Documenti/UTapps/School/School/FirstStart.qml:35
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/FirstStart.qml:35
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/FirstStart.qml:35
 msgid ""
 "This is a must-have app for all students who wants to manage their own "
 "weekly school timetable"
@@ -86,79 +107,98 @@ msgstr ""
 "Esta es una aplicación que deben tener todos los estudiantes que quieran "
 "gestionar su horario escolar semanalmente"
 
-#: /home/mike/Documenti/UTapps/School/School/FirstStart.qml:58
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/FirstStart.qml:58
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/FirstStart.qml:58
 msgid "Start managing your TimeTable"
 msgstr "Comienza a gestionar tu horario"
 
-#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:44
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/MainPage.qml:44
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/MainPage.qml:44
 msgid "Edit"
 msgstr "Editar"
 
-#: /home/mike/Documenti/UTapps/School/School/MainPage.qml:52
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/MainPage.qml:52
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/MainPage.qml:52
 msgid "Info"
 msgstr "Información"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:8
 msgid "Monday"
 msgstr "Lunes"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:8
 msgid "Tuesday"
 msgstr "Martes"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:8
 msgid "Wednesday"
 msgstr "Miércoles"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:8
 msgid "Thursday"
 msgstr "Jueves"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:8
 msgid "Friday"
 msgstr "Viernes"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:8
 msgid "Saturday"
 msgstr "Sábado"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:8
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:8
 msgid "Sunday"
 msgstr "Domingo"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:9
 msgid "Mon"
 msgstr "Lun"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:9
 msgid "Tue"
 msgstr "Mar"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:9
 msgid "Wed"
 msgstr "Mie"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:9
 msgid "Thu"
 msgstr "Jue"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:9
 msgid "Fri"
 msgstr "Vie"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:9
 msgid "Sat"
 msgstr "Sab"
 
-#: /home/mike/Documenti/UTapps/School/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/SectionsDays.qml:9
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/SectionsDays.qml:9
 msgid "Sun"
 msgstr "Dom"
 
-#: /home/mike/Documenti/UTapps/School/School/Sunday.qml:33
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/Sunday.qml:33
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/Sunday.qml:33
 msgid "You don't go to School"
 msgstr "No vas al colegio"
 
-#: /home/mike/Documenti/UTapps/School/School/Sunday.qml:42
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/School/Sunday.qml:42
+#: /home/alaskalinuxuser/clickables/myforks/school-timetable/build/x86_64-linux-gnu/app/install/School/Sunday.qml:42
 msgid "You're on Holiday"
 msgstr "Estás de vacaciones"
 

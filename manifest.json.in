@@ -1,7 +1,7 @@
 {
     "name": "school.mymike",
     "description": "Simply app to manage the weekly school timetable",
-    "architecture": "@CLICK_ARCH@",
+    "architecture": "all",
     "title": "Orario Scolastico",
     "hooks": {
         "School": {
@@ -9,7 +9,7 @@
             "desktop": "School/School.desktop"
         }
     },
-    "version": "0.3.3",
+    "version": "0.3.4",
     "maintainer": "Michele Castellazzi <miguel2000@livecom.it>",
-    "framework": "ubuntu-sdk-15.04"
+    "framework": "@CLICK_FRAMEWORK@"
 }
